@@ -729,7 +729,7 @@ input[type="checkbox"]:checked+span:after {
   display: block;
   width: 18px;
   height: 18px;
-  background-image: url(../icon/link-icon.webp);
+  background-image: url(../icon/link-icon.svg);
   background-repeat: no-repeat;
   background-size: 18px;
   background-position: center;
