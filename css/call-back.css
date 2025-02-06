@@ -1,0 +1,35 @@
+.call-container {
+  position: relative;
+  border-radius: 6px;
+}
+
+.call__block {
+  position: absolute;
+  padding: 51px 80px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.call__bg {
+    border-radius: 6px;
+  min-height: 150px;
+  background-color: #fff7f4;
+  background-image: url(../img/cb-img.svg);
+  background-size: contain;
+  background-position: right 40% center;
+  background-repeat: no-repeat;
+  background-size: 186px;
+}
+
+.call__text {
+  width: 45%;
+}
+
+.call__btn {
+  width: 20%;
+}

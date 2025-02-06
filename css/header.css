@@ -1,0 +1,102 @@
+.header {
+  position: sticky;
+  top: 0;
+  font-weight: 600;
+  background-color: var(--white);
+  padding: 12px 0 20px 0;
+  z-index: 5;
+  transition: all .4s ease;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__logo-small {
+  display: none;
+}
+
+.header__logo-big {
+  width: 138px;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav__link {
+  color: inherit;
+  transition: color 0.4s ease;
+}
+
+.nav__link:focus {
+  color: var(--active-orange);
+}
+
+.nav__link:hover {
+  color: var(--orange);
+}
+
+.nav__link:active {
+  color: var(--active-orange);
+}
+
+.nav__item:nth-of-type(3) {
+  display: none;
+}
+
+.header__icon {
+  fill: var(--black);
+  transition: fill 0.4s ease;
+}
+
+.header__tel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.4s ease;
+}
+
+.header__tel:focus {
+  color: var(--active-orange);
+}
+
+.header__tel:hover {
+  color: var(--orange);
+}
+
+.header__tel:active {
+  color: var(--orange);
+}
+
+.header__tel:focus .header__icon {
+  fill: var(--active-orange);
+}
+
+.header__tel:hover .header__icon {
+  fill: var(--orange);
+}
+
+.header__tel:active .header__icon {
+  fill: var(--active-orange);
+}
+
+.header__feedback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 58px;
+}
+
+.burger {
+  display: none;
+}
+
+.header__contacts {
+  display: none;
+}

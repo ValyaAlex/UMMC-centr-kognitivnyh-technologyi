@@ -1,0 +1,674 @@
+@media (max-width: 1200px) {
+
+  .programs__cards,
+  .specialists__cards {
+    gap: 25px;
+  }
+
+  .programs__banner {
+    padding: 25px;
+  }
+
+  .programs__card {
+    background-size: 85%;
+  }
+
+  .form__filters {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .select,
+  .multiselect {
+    width: 255px;
+  }
+
+  .reset-2 {
+    width: 35%;
+    padding-top: 15px;
+    padding-left: 20px;
+  }
+
+  .reset-2::before {
+    right: auto;
+    left: 220px;
+    top: 32%;
+  }
+
+  .reset-2::after {
+    right: auto;
+    left: 230px;
+    top: 61%;
+  }
+
+  .science__card {
+    padding: 25px;
+  }
+
+  .footer__item:nth-of-type(1) {
+    width: 30%;
+  }
+
+  .footer__item:nth-of-type(3) {
+    width: 35%;
+  }
+
+  .footer__address {
+    background-position: right center;
+  }
+
+  .footer__descr:nth-of-type(2) {
+    padding-left: 20px;
+  }
+
+  .footer__tel {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 995px) {
+  .header {
+    padding: 10px 0 15px 0;
+  }
+
+  .header__tel {
+    display: none;
+  }
+
+  .header__tel-link {
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+    align-items: center;
+  }
+
+  .header__tel-link::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../icon/tel.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: left center;
+  }
+
+  .header__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .header__nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    background-color: var(--white);
+    top: 69px;
+    left: 0;
+    width: 50%;
+    min-width: 250px;
+    height: 95vh;
+    padding: 50px 50px 100px 35px;
+    overflow-y: auto;
+    visibility: hidden;
+    border-top: 1px solid var(--border);
+    transform: translateX(-120%);
+    transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .header__contacts {
+    display: block;
+  }
+
+  .nav .nav__list {
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+  }
+
+  .nav .nav__item {
+    line-height: 50px;
+  }
+
+  .nav--active {
+    visibility: visible;
+    transform: none;
+  }
+
+  .nav__link {
+    font-weight: normal;
+    font-size: 20px;
+  }
+
+  .close {
+    display: block;
+    margin-bottom: 100px;
+  }
+
+  .burger {
+    width: 40px;
+    height: 25px;
+    display: block;
+    visibility: visible;
+    position: relative;
+  }
+
+  .burger--active .burger__line {
+    transform: rotate(45deg) translateY(4.5px);
+  }
+
+  .burger--active .burger__line:nth-child(2) {
+    transform: rotate(-45deg) translateY(-4.5px);
+  }
+
+  .burger::after {
+    content: "";
+    top: 0;
+    left: 0;
+    outline: none;
+  }
+
+  .burger__line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    border-radius: inherit;
+    background-color: var(--black);
+    transition: width 0.1s, transform 0.1s;
+  }
+
+  .burger__line:nth-child(1) {
+    top: 11px;
+  }
+
+  .burger__line:nth-child(2) {
+    top: 70%;
+  }
+
+  .science__cards {
+    justify-content: start;
+  }
+
+  .science__card {
+    width: 30.5%;
+  }
+
+  .footer__item:nth-of-type(1),
+  .footer__item:nth-of-type(2) {
+    width: 45%;
+  }
+
+  .footer__content {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+
+  .footer__item:nth-of-type(3) {
+    width: 100%;
+  }
+
+  .footer__info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .footer__link-2 {
+    width: 100%;
+  }
+
+  .programs__card {
+    width: 31%;
+  }
+
+  .call__btn {
+    width: 25%;
+  }
+
+  .specialists__card {
+    width: 31%;
+  }
+}
+
+@media (max-width: 875px) {
+  .hero__container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero__banner {
+    width: 100%;
+    background-size: 320px 260px;
+  }
+
+  .hero__offers {
+    width: 100%;
+  }
+
+  .hero__title {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .hero__offers .title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .hero__item:not(:nth-last-of-type(1)) {
+    height: 70px;
+  }
+
+  .programs {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .science {
+    padding-top: 60px;
+  }
+
+  .science__all-btn,
+  .consultation {
+    margin-bottom: 60px;
+  }
+
+  .specialists {
+    padding-top: 60px;
+  }
+
+  .reset {
+    width: 35%;
+    padding-top: 15px;
+    padding-left: 20px;
+  }
+
+  .reset::before {
+    right: auto;
+    left: 220px;
+    top: 32%;
+  }
+
+  .reset::after {
+    right: auto;
+    left: 230px;
+    top: 61%;
+  }
+
+  .programs__card {
+    width: 48%;
+  }
+
+  .specialists__card {
+    width: 48%;
+  }
+
+  .science__card:nth-last-of-type(1),
+  .science__card:nth-last-of-type(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 827px) {
+  .header__nav {
+    width: 60%;
+  }
+
+  .nav__link {
+    font-size: 18px;
+  }
+
+  .call__block {
+    padding: 25px;
+  }
+
+  .reset-2::after {
+    top: 50%;
+  }
+
+  .filters-320 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .filter__check,
+  .filter__check-2 {
+    visibility: hidden;
+  }
+
+  .filter__label {
+    display: flex;
+    align-items: center;
+  }
+
+  .filter__label::before {
+    content: "";
+    background-image: url(../icon/Filters.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 19px 13px;
+    display: block;
+    width: 19px;
+    height: 19px;
+    margin-right: 15px;
+  }
+
+  .programs__btns .btn-1.programs__btn--active~.filter__btn {
+    display: block;
+  }
+
+  .programs__btns .btn-2.programs__btn--active~.filter__btn-2 {
+    display: block;
+  }
+
+  #result-2 {
+    transform: translateY(-180px);
+  }
+
+  .science__card {
+    width: 47%;
+  }
+
+  .consultation__contacts {
+    flex-direction: column;
+    align-items: start;
+    padding-top: 20px;
+  }
+
+  .consultation__bg {
+    border-radius: 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-size: 350px;
+    min-height: 265px;
+  }
+
+  .consultation__block {
+    box-shadow: 0px 4px 20px 0px rgba(155, 178, 190, 0.2);
+    border-radius: 6px;
+  }
+
+  .consultation__info {
+    position: relative;
+  }
+
+  .footer__info {
+    margin-bottom: 20px;
+  }
+
+  .modal {
+    width: 90%;
+    height: 80%;
+  }
+}
+
+@media (max-width: 660px) {
+  .burger {
+    width: 20px;
+  }
+
+  .hero__text {
+    margin-bottom: 55px;
+  }
+
+  .hero__title {
+    font-size: 30px;
+    max-width: 90%;
+    line-height: 36px;
+  }
+
+  .header__nav {
+    width: 100%;
+    padding: 20px 20px 60px 25px;
+  }
+
+  .select,
+  .multiselect {
+    width: 99%;
+  }
+
+  .reset-2::after {
+    top: 61%;
+  }
+
+  #result-2 {
+    transform: translateY(-200px);
+  }
+
+  .programs__card {
+    width: 100%;
+    background-size: 65%;
+  }
+
+  .specialists__card {
+    width: 100%;
+    background-size: 35%;
+  }
+
+  .specialists__name {
+    max-width: 300px;
+  }
+
+  .specialists__profession {
+    max-width: 285px;
+  }
+
+  .call-container {
+    box-shadow: 0px 4px 20px 0px rgba(155, 178, 190, 0.2);
+  }
+
+  .call__block {
+    position: relative;
+    flex-direction: column;
+    align-items: start;
+    gap: 25px;
+  }
+
+  .call__btn {
+    width: 100%;
+  }
+
+  .call__text {
+    width: 100%;
+  }
+
+  .call__bg {
+    border-radius: 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    height: 170px;
+    background-size: 210px;
+  }
+
+  .reset,
+  .reset-2 {
+    width: 50%;
+  }
+
+  .form__filters {
+    gap: 10px;
+  }
+
+  .select,
+  .multiselect {
+    height: 45px;
+  }
+
+  .select__content,
+  .multiselect__content {
+    top: 50px;
+  }
+
+  .specialists__card:nth-of-type(2),
+  .specialists__card:nth-of-type(4),
+  .specialists__card:nth-of-type(5) {
+    display: none;
+  }
+
+  .science__card {
+    width: 100%;
+    min-height: 280px;
+  }
+
+  .science__card:nth-of-type(4),
+  .science__card:nth-of-type(5),
+  .science__card:nth-of-type(6) {
+    display: none;
+  }
+
+  .consultation__bg {
+    min-height: 230px;
+    background-size: 300px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .consultation__tel {
+    flex-wrap: wrap;
+  }
+
+  .footer__item:nth-of-type(1),
+  .footer__item:nth-of-type(2) {
+    width: 100%;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer__descr:nth-of-type(1),
+  .footer__descr:nth-of-type(2) {
+    width: 100%;
+  }
+
+  .footer__descr:nth-of-type(2) {
+    padding: 0;
+  }
+
+  .footer__bottom-list {
+    order: -1;
+    justify-content: start;
+  }
+
+  .footer {
+    padding-bottom: 0;
+  }
+
+  .modal__flex .modal__block {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .hero__container {
+    margin-bottom: 10px;
+  }
+
+  .header__logo-big {
+    width: 103px;
+  }
+
+  .header__nav {
+    top: 55px;
+  }
+
+  .nav .nav__item {
+    line-height: 25px;
+  }
+
+  .hero__title {
+    font-size: 24px;
+    max-width: 100%;
+    line-height: 32px;
+  }
+
+  .hero__text {
+    margin-bottom: 210px;
+    max-width: 100%;
+  }
+
+  .swiper__title,
+  .specialists__name {
+    font-size: 18px;
+  }
+
+  .programs__title {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .programs__btns,
+  .specialists__btns {
+    gap: 10px;
+  }
+
+  .programs__card {
+    background-size: 85%;
+  }
+
+  .specialists__card {
+    background-size: 45%;
+  }
+
+  .specialists__profession {
+    font-size: 12px;
+    max-width: 207px;
+  }
+
+  .specialists__link {
+    font-size: 12px;
+  }
+
+  .science__btns {
+    gap: 10px;
+  }
+
+  .science__btn {
+    padding: 9px 13px;
+  }
+
+  .science__all-btn,
+  .specialists__all-btn {
+    padding: 15px 8px;
+  }
+
+  .consultation__info {
+    padding: 20px;
+  }
+
+  .consultation__wa {
+    flex-wrap: wrap;
+  }
+
+  .consultation__bg {
+    min-height: 161px;
+    background-size: 210px;
+    background-position: center bottom;
+  }
+
+  .footer__tel,
+  .footer__info {
+    gap: 15px;
+  }
+
+  .modal {
+    padding: 20px;
+  }
+
+  .modal__btn-close {
+    top: 24px;
+    right: 20px;
+  }
+}

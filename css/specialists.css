@@ -1,0 +1,208 @@
+.specialists {
+  padding-top: 100px;
+}
+
+.specialists__btns {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 32px;
+}
+
+.specialists__btn {
+  font-size: 14px;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 6px;
+  color: var(--black);
+  background-color: var(--white);
+  transition: all.4s ease;
+}
+
+.specialists__btn:hover,
+.specialists__btn--active {
+  color: var(--white);
+  background-color: #65b8ef;
+}
+
+.specialists__container {
+  margin-bottom: 32px;
+  display: none;
+}
+
+.specialists--active {
+  display: block;
+}
+
+
+.specialists__cards {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.specialists__card {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 31.5%;
+  min-height: 320px;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 45%;
+  border: 1px solid var(--white);
+  border-radius: 6px;
+  box-shadow: 0px 4px 20px 0px rgba(155, 178, 190, 0.2);
+  cursor: pointer;
+  transition: border-color 0.4s ease;
+}
+
+.specialists__card:hover {
+  border-color: var(--orange);
+}
+
+.specialists__name {
+  max-width: 230px;
+  margin-bottom: 12px;
+  transition: color 0.4s ease;
+}
+
+.specialists__card:hover .specialists__name {
+  color: var(--orange);
+}
+
+.specialists__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  font-size: 14px;
+  line-height: 25px;
+  letter-spacing: 0.5px;
+  font-family: "Core Sans N 65 Regular", sans-serif;
+  font-weight: 600;
+  color: var(--orange);
+}
+
+.specialists__link::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../icon/link-icon.svg);
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: center;
+}
+
+.specialists__consultation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.specialists__price {
+  position: relative;
+}
+
+.specialists__price::before {
+  content: "Консультация";
+  color: #7c90a0;
+  display: block;
+  font-size: 12px;
+}
+
+.specialists__profession {
+  font-size: 14px;
+  line-height: 19px;
+  color: #7c90a0;
+  max-width: 220px;
+}
+
+.specialist-1 {
+  background-image: url(../img/Баранов.png);
+}
+
+.specialist-2 {
+  background-image: url(../img/Чугаева.png);
+}
+
+.specialist-3 {
+  background-image: url(../img/Шаронова.png);
+}
+
+.specialist-4 {
+  background-image: url(../img/Миллер.png);
+}
+
+.specialist-5 {
+  background-image: url(../img/Баклановская.png);
+}
+
+.specialist-6 {
+  background-image: url(../img/Еганова.png);
+}
+
+.specialists__all-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  font-size: 13px;
+  line-height: 17px;
+  letter-spacing: 0.5px;
+  font-family: "Core Sans N 65 Regular", sans-serif;
+  font-weight: 600;
+  border: 1px solid var(--orange);
+  border-radius: 6px;
+  color: var(--orange);
+  background-color: transparent;
+  width: 100%;
+  padding: 27px 30px;
+  transition: background-color .4s ease, border-color .4s ease;
+}
+
+.specialists__all-btn::after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-image: url(../icon/link-icon.svg);
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: center;
+}
+
+.specialists__all-btn:hover {
+  background-color: #FFF7F4;
+  border-color: #FFF7F4;
+}
+
+.instructor-1 {
+  background-image: url(../img/Бершадская.png);
+}
+
+.instructor-2 {
+  background-image: url(../img/Родионова.png);
+}
+
+.instructor-3 {
+  background-image: url(../img/Филонова.png);
+}
+
+.instructor-4 {
+  background-image: url(../img/Клименко.png);
+}
+
+.instructor-5 {
+  background-image: url(../img/Филипьева.png);
+}
+
+.instructor-6 {
+  background-image: url(../img/Каменец.png);
+}

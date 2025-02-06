@@ -1,0 +1,143 @@
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+:root {
+  --white: #ffffff;
+  --gray: #edf2f5;
+  --black: #232427;
+  --orange: #f4662a;
+  --hover-orange: #ed6429;
+  --active-orange: #da6a3a;
+  --border: #e1e4e7;
+}
+
+.link-reset {
+  color: inherit;
+  outline-offset: 0;
+  text-decoration: none;
+}
+
+.margin-reset {
+  margin: 0;
+}
+
+.img-width {
+  width: 100%;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button {
+  font-weight: 400;
+  font-size: 14px;
+  padding: 12px 16px;
+  background-color: var(--orange);
+  line-height: 18px;
+  border-radius: 6px;
+  text-align: center;
+  color: var(--white);
+  letter-spacing: 0.7px;
+  transition: background-color 0.4s ease;
+}
+
+.button:focus {
+  background-color: var(--active-orange);
+}
+
+.button:hover {
+  background-color: var(--hover-orange);
+}
+
+.button:active {
+  background-color: var(--active-orange);
+}
+
+@font-face {
+  font-family: "Core Sans A 45 Regular";
+  src: local("Core Sans A 45 Regular"), local("Core Sans A 45-Regular"),
+    url("../fonts/CoreSansA45Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Core Sans A 65 Bold";
+  src: local("Core Sans A 65 Bold"), local("Core Sans A 65-Bold"),
+    url("../fonts/CoreSansA65Bold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  min-width: 320px;
+  font-family: "Core Sans A 45 Regular", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: var(--white);
+  -webkit-text-size-adjust: none;
+  color: var(--black);
+  line-height: 24px;
+  letter-spacing: 0.3px;
+}
+
+.title {
+  font-family: "Core Sans A 45 Regular", sans-serif;
+  font-size: 32px;
+  max-width: 520px;
+  margin-bottom: 32px;
+  line-height: 40px;
+  letter-spacing: 0.5px;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.stop-scroll,
+.stop-scroll-modal {
+  overflow: hidden;
+}
+
+.responsive-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: rgb(112, 124, 143);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+}
+
+.stop-scroll .responsive-overlay {
+  visibility: visible;
+  opacity: 0.4;
+  z-index: 2;
+}

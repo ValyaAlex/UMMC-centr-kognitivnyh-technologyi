@@ -1,0 +1,86 @@
+.consultation {
+  padding-top: 100px;
+  margin-bottom: 100px;
+}
+
+.consultation__block {
+  position: relative;
+}
+
+.consultation__bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--gray);
+  border-radius: 6px;
+  min-height: 335px;
+  background-image: url(../img/bc-consultation.svg);
+  background-repeat: no-repeat;
+  background-position: right 2px bottom;
+  background-size: 450px;
+}
+
+.consultation__info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 35px 40px;
+
+}
+
+.consultation__descr {
+  max-width: 600px;
+  font-size: 16px;
+}
+
+.consultation__contacts {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 16px;
+  padding-top: 15px;
+}
+
+.consultation__wa-link {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-image: url(../icon/WhatsApp-Icon.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.consultation__wa {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.consultation__tel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.consultation__tel-link {
+  display: inline-flex;
+  align-items: center;
+  transition: color .4s ease;
+}
+
+.consultation__icon {
+  fill: var(--black);
+  transition: fill .4s ease;
+}
+
+
+.consultation__tel-link:hover {
+  color: var(--orange);
+}
+
+.consultation__tel-link:hover .consultation__icon {
+  fill: var(--orange);
+}

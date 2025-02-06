@@ -1,0 +1,792 @@
+.programs {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+}
+
+.programs__btns {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.programs__btn {
+  font-size: 14px;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 6px;
+  color: var(--black);
+  background-color: var(--white);
+  transition: all.4s ease;
+}
+
+.programs__btn:hover,
+.programs__btn--active {
+  color: var(--white);
+  background-color: #65b8ef;
+}
+
+.form__filters {
+  display: flex;
+  gap: 20px;
+  padding-left: 2px;
+}
+
+.form {
+  padding-bottom: 40px;
+}
+
+.filter__btn,
+.filter__btn-2 {
+  position: absolute;
+  right: 0;
+  top: -15px;
+  display: none;
+}
+
+/* селект */
+.select,
+.multiselect {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 60px;
+  padding: 15px 20px;
+  outline: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.select__title::before,
+.select__title::after,
+.multiselect__title::before,
+.multiselect__title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  display: block;
+  width: 6px;
+  height: 2px;
+  transition: all 0.5s ease;
+  background-color: #333333;
+  transform: translate(-0.5px, -50%) rotate(45deg);
+}
+
+.select[data-state="active"] .select__title::before,
+.multiselect[data-state="active"] .multiselect__title::before {
+  transform: translate(-0.5px, -50%) rotate(-45deg);
+  background-color: var(--orange);
+}
+
+.select[data-state="active"] .select__title::after,
+.multiselect[data-state="active"] .multiselect__title::after {
+  transform: translate(3px, -50%) rotate(45deg);
+  background-color: var(--orange);
+}
+
+.select[data-state="active"] {
+  outline: 2px solid rgba(44, 156, 229, 1);
+}
+
+.select__content,
+.multiselect__content {
+  opacity: 1;
+}
+
+.select[data-state="active"] .select__label+.select__input+.select__label,
+.multiselect[data-state="active"] .multiselect__label+.multiselect__input+.multiselect__label {
+  max-height: 80px;
+  border-top-width: 1px;
+}
+
+.select__title,
+.multiselect__title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Core Sans N 45 Regular", sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  color: #7c90a0;
+}
+
+.select__title::after,
+.multiselect__title::after {
+  transform: translate(3px, -50%) rotate(-45deg);
+}
+
+.select__title:hover,
+.multiselect__title:hover {
+  border-color: var(--orange);
+}
+
+.select__title:hover::before,
+.select__title:hover::after,
+.multiselect__title:hover::before,
+.multiselect__title:hover::after {
+  background-color: var(--orange);
+}
+
+.reset,
+.reset-2 {
+  position: relative;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  transition: visibility 0.2s ease;
+}
+
+.reset--active {
+  display: flex;
+}
+
+.reset::before,
+.reset-2::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #edf2f5;
+  border-radius: 50%;
+
+  position: absolute;
+  right: -50px;
+  top: 25%;
+}
+
+.reset::after,
+.reset-2::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 42%;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-image: url(../icon/close-filters.png);
+  background-repeat: no-repeat;
+  background-size: 8px;
+  background-position: center;
+}
+
+.select__content,
+.multiselect__content {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 15px;
+  background-color: var(--white);
+  outline: 1px solid var(--border);
+  border-top: none;
+  border-radius: 6px;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 2;
+}
+
+.multiselect__content {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.select--disabled {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.select__input {
+  display: none;
+}
+
+.select__label,
+.multiselect__label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+  line-height: 16px;
+  font-size: 14px;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.select__label:nth-last-child(1),
+.select__label:nth-of-type(1),
+.multiselect__label:nth-last-child(1),
+.multiselect__label:nth-of-type(1) {
+  margin-bottom: 0;
+}
+
+.select__label:nth-of-type(1) {
+  display: none;
+}
+
+.select__label:hover,
+.multiselect__label:hover {
+  color: var(--orange);
+}
+
+.multiselect__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.multiselect__item:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+
+.multiselect__input {
+  display: none;
+}
+
+input[type="checkbox"]:checked+span,
+input[type="checkbox"]:not(:checked)+span {
+  display: inline-block;
+  position: relative;
+  padding-left: 28px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked+span:before,
+input[type="checkbox"]:not(:checked)+span:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: -12px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #bec8d0;
+  border-radius: 4px;
+  background: none;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  -o-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
+}
+
+input[type="checkbox"]:checked+span:before {
+  content: "";
+  display: block;
+  border-color: var(--orange);
+  background-color: var(--orange);
+  background-image: url(../icon/check.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 10px 7px;
+}
+
+.multiselect__input:checked+span {
+  color: var(--orange);
+}
+
+input[type="checkbox"]:checked+span:after {
+  content: "";
+  opacity: 1;
+}
+
+/* cards */
+.programs__cards {
+  position: relative;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: transform 0.4s ease;
+}
+
+.programs__card {
+  position: relative;
+  width: 31.5%;
+  min-height: 320px;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  border: 1px solid var(--white);
+  border-radius: 6px;
+  box-shadow: 0px 4px 20px 0px rgba(155, 178, 190, 0.2);
+  cursor: pointer;
+  transition: border-color 0.4s ease, opacity 0.4s ease;
+}
+
+.programs__card:hover {
+  border-color: var(--orange);
+}
+
+.programs__card:hover .card__btn {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.programs__title {
+  transition: color 0.4s ease;
+}
+
+.programs__card:hover .programs__title {
+  color: var(--orange);
+}
+
+.programs__banner {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 32px;
+}
+
+.card__btn {
+  background-color: inherit;
+  color: var(--orange);
+  border: 1px solid var(--orange);
+  width: fit-content;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.more__btn,
+.more__btn-child {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  display: block;
+  color: var(--black);
+  margin: 0 auto;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  padding-left: 30px;
+}
+
+.programs__container {
+  display: none;
+  position: relative;
+}
+
+.programs--active {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+.btn--none {
+  display: none;
+}
+
+.filter__btn {
+  display: none;
+}
+
+/* img */
+[class*="timokko"] {
+  background-image: url(../img/Тимокко.webp);
+}
+
+[class*="tomatis"] {
+  background-image: url(../img/Аудио-психо-фоно-стимуляция\ А.\ Томатиса.webp);
+}
+
+[class*="metronom"] {
+  background-image: url(../img/Интерактивный\ метроном.webp);
+}
+
+[class*="bak"] {
+  background-image: url(../img/Биоакустическая\ коррекция.webp);
+}
+
+[class*="vocal-therapy"] {
+  background-image: url(../img/Вокалотерапия.webp);
+}
+
+[class*="music-therapy"] {
+  background-image: url(../img/Музыкотерапия.webp);
+}
+
+[class*="tlp"] {
+  background-image: url(../img/TLP.webp);
+}
+
+[class*="fitlight"] {
+  background-image: url(../img/ФитЛайт.webp);
+}
+
+[class*="boslab"] {
+  background-image: url(../img/БОС-ЛАБ\ ПРОФИ.webp);
+}
+
+[class*="voka"] {
+  background-image: url(../img/Вокастим.webp);
+}
+
+[class*="intim"] {
+  background-image: url(../img/ИнТАйм.webp);
+}
+
+[class*="tkmp"] {
+  background-image: url(../img/Транскраниальная\ микрополяризация.webp);
+}
+
+[class*="bilgou"] {
+  background-image: url(../img/Мозжечковая\ стимуляция.webp);
+}
+
+[class*="stabilo"] {
+  background-image: url(../img/Стабилан.webp);
+}
+
+[class*="neyroport"] {
+  background-image: url(../img/Нейропорт.webp);
+}
+
+[class*="kolibri"] {
+  background-image: url(../img/Колибри.webp);
+}
+
+[class*="kinekt"] {
+  background-image: url(../img/Играй\ и\ развивайся.webp);
+}
+
+[class*="ritmoBos"] {
+  background-image: url(../img/Ритмо-БОСРитмо-БОС.webp);
+}
+
+[class*="leither"] {
+  background-image: url(../img/Leither-III.webp);
+}
+
+[class*="veksler"] {
+  background-image: url(../img/Тест\ Векслера.webp);
+}
+
+[class*="ados"] {
+  background-image: url(../img/ADOS-2.webp);
+}
+
+[class*="personality-disorders"] {
+  background-image: url(../img/Диагностическая\ личностных\ отклонений\ подростков\ -и\ взрослых.webp);
+}
+
+[class*="dependence"] {
+  background-image: url(../img/Диагностика\ вероятного\ зависимого\ поведения\ у\ детей.webp);
+}
+
+[class*="numikon"] {
+  background-image: url(../img/Нумикон.webp);
+}
+
+[class*="sensory"] {
+  background-image: url(../img/Сенсорная\ интеграция.webp);
+}
+
+[class*="neurogym"] {
+  background-image: url(../img/Нейрогимнастика\ по\ Бернштейну.webp);
+}
+
+[class*="art-therapy"] {
+  background-image: url(../img/Арт-терапия.webp);
+}
+
+[class*="blomberg"] {
+  background-image: url(../img/Бломберг-терапия.webp);
+}
+
+[class*="tsfi"] {
+  background-image: url(../img/TSFI.webp);
+}
+
+[class*="degange"] {
+  background-image: url(../img/DeGangi-Berk.webp);
+}
+
+[class*="denver"] {
+  background-image: url(../img/Денверская\ модель\ раннего\ вмешательства.webp);
+}
+
+[class*="help"] {
+  background-image: url(../img/Служба\ ранней\ помощи.webp);
+}
+
+[class*="test-denver"] {
+  background-image: url(../img/Тестирование\ по\ Денверской\ модели\ раннего\ вмешательства.webp);
+}
+
+[class*="aba"] {
+  background-image: url(../img/АВА-терапия.webp);
+}
+
+[class*="aba-test"] {
+  background-image: url(../img/Тестирование\ по\ VB-MAPP.webp);
+}
+
+[class*="logoped"] {
+  background-image: url(../img/Логопедический\ массаж.webp);
+}
+
+[class*="program1"] {
+  background-image: url(../img/слушу\ говорю\ умею.webp);
+}
+
+[class*="program2"] {
+  background-image: url(../img/нейронотки.webp);
+}
+
+[class*="program3"] {
+  background-image: url(../img/я\ первоклассник.webp);
+}
+
+[class*="program4"] {
+  background-image: url(../img/скоро\ в\ школу.webp);
+}
+
+[class*="program5"] {
+  background-image: url(../img/успешный\ ученик.webp);
+}
+
+[class*="program7"] {
+  background-image: url(../img/про\ общение.webp);
+}
+
+[class*="program8"] {
+  background-image: url(../img/нейроступеньки.webp);
+}
+
+[class*="program9"] {
+  background-image: url(../img/нейрофитнес.webp);
+}
+
+[class*="program10"] {
+  background-image: url(../img/пишу\ красиво.webp);
+}
+
+[class*="program11"] {
+  background-image: url(../img/суперчтение.webp);
+}
+
+[class*="program12"] {
+  background-image: url(../img/эмоциональный\ интеллект.webp);
+}
+
+[class*="iglo"] {
+  background-image: url(../img/Иглорефлексотерапия.webp);
+}
+
+[class*="kinesio"] {
+  background-image: url(../img/Кинезиологическое\ тейпирование.webp);
+}
+
+[class*="sbt"] {
+  background-image: url(../img/SBT-тренинг.webp);
+}
+
+[class*="trening"] {
+  background-image: url(../img/подростки.webp);
+}
+
+[class*="ready-test"] {
+  background-image: url(../img/Диагностика\ готовности\ к\ школьному\ обучению.webp);
+}
+
+[class*="school-test"] {
+  background-image: url(../img/Школьный\ тест\ умственного\ развития.webp);
+}
+
+[class*="macartur"] {
+  background-image: url(../img/MacArthur\ CDI.webp);
+}
+
+[class*="bayley"] {
+  background-image: url(../img/Bayley-III.webp);
+}
+
+[class*="mchat"] {
+  background-image: url(../img/M\ CHAT-RF.webp);
+}
+
+[class*="scq"] {
+  background-image: url(../img/SCQ.webp);
+}
+
+[class*="proforientation"] {
+  background-image: url(../img/профориентации\ \ школьников.webp);
+}
+
+[class*="pfa"] {
+  background-image: url(../img/PFA-SBT.webp);
+}
+
+[class*="camp"] {
+  background-image: url(../img/camp.webp);
+}
+
+[class*="darsonval"] {
+  background-image: url(../img/darsonval.webp);
+}
+
+/* modals */
+
+.modal-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(112, 124, 143, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+  z-index: 20;
+  visibility: hidden;
+  transition: 0.4s ease;
+  overflow-y: visible;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px 40px 40px 40px;
+  height: 670px;
+  width: 800px;
+  border: 1px solid var(--white);
+  background-color: var(--white);
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  overflow-y: auto;
+  transition: 0.4s ease;
+}
+
+.modal-overlay--visible {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.4s ease;
+}
+
+.modal.modal--visible {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.4s ease;
+}
+
+.modal__btn-close {
+  position: absolute;
+  top: 32px;
+  right: 40px;
+  cursor: pointer;
+}
+
+.modal__list:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.modal__close {
+  width: 16px;
+  height: 16px;
+}
+
+.modal-overlay__text {
+  max-width: 85%;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.modal__more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.5px;
+  font-family: "Core Sans N 65 Regular", sans-serif;
+  font-weight: 600;
+  border: 1px solid var(--orange);
+  border-radius: 6px;
+  color: var(--orange);
+  background-color: transparent;
+  padding: 14px 24px;
+  transition: background-color .4s ease, border-color .4s ease;
+}
+
+.modal__more::after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-image: url(../icon/link-icon.webp);
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: center;
+}
+
+.modal__more:hover {
+  background-color: #FFF7F4;
+  border-color: #FFF7F4;
+}
+
+.modal__flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.modal__block {
+  margin-bottom: 16px;
+}
+
+.modal__flex .modal__block {
+  width: 48%;
+  margin: 0;
+}
+
+.modal__title {
+  margin-bottom: 16px;
+}
+
+.modal__block-name {
+  margin-bottom: 5px;
+}
+
+.modal__item::before {
+  content: '—';
+  margin-right: 10px;
+}
+
+.scrollbar {
+  float: left;
+  overflow-y: scroll;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 5px;
+  background-color: #fdfdfd;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d2d1d1;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+}
