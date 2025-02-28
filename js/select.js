@@ -10,13 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const selectsChild1 = document.querySelectorAll(".selects-2 .select__input");
   const selectsChild2 = document.querySelectorAll(".selects-3 .select__input");
-  const selectsChild5 = document.querySelectorAll(".selects-3 .select__label");
   const selectsChild3 = document.querySelectorAll(
     ".selects-2 .multiselect__input"
   );
   const selectsChild4 = document.querySelectorAll(
     ".selects-2 .multiselect__item"
   );
+  const selectsChild5 = document.querySelectorAll(".selects-3 .select__label");
+
+
   const list2 = document.querySelectorAll("#result-2 .filtered");
   let btnMore1 = document.querySelector(".more__btn");
   let btnMore2 = document.querySelector(".more__btn-child");
@@ -83,9 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (program.classList.contains("programs--active")) {
-        if (select0.hasAttribute("checked") === false && result > 0) {
+        if (title.textContent.trim() !== title.getAttribute('data-default') || result > 0) {
           resetBtn.classList.add("reset--active");
-
           resetBtn.addEventListener("click", function (e) {
             e.preventDefault();
             resetFunc(selectSingle, multiselect);
@@ -97,9 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (programChild.classList.contains("programs--active")) {
-        if (selectChild.hasAttribute("checked") === false && result > 0) {
+        if (title.textContent.trim() !== title.getAttribute('data-default') || result > 0) {
           resetBtn2.classList.add("reset--active");
-
           resetBtn2.addEventListener("click", function (e) {
             e.preventDefault();
             resetFunc(selectSingle, multiselect);
@@ -184,56 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  function resetFunc(select1, select2) {
-    let selects = [];
-    selects.push(select1);
-    selects.push(select2);
-    let cards = document.querySelectorAll(".programs__card");
-
-    for (let i = 0; i < selects.length; i++) {
-      for (let j = 0; j < selects[i].length; j++) {
-        selects[i][j].setAttribute("data-state", "");
-        let titles = selects[i][j].querySelectorAll(".titles");
-        let contents = selects[i][j].querySelectorAll(".contents");
-        for (let h = 0; h < titles.length; h++) {
-          titles[h].style.color = "#7C90A0";
-          titles[h].textContent = titles[h].getAttribute("data-default");
-          let checkboxes = document.getElementsByName("singleCheck");
-          for (let i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].checked) {
-              checkboxes[i].checked = false;
-              result = 0;
-            }
-          }
-        }
-        for (let i = 0; i < contents.length; i++) {
-          contents[i].classList.add("select--disabled");
-        }
-      }
-      for (let i = 0; i < items.length; i++) {
-        items[i].classList.remove("none");
-      }
-
-      cards.forEach((e) => {
-        e.classList.remove("btn--none");
-        e.classList.remove("none");
-      });
-      showMore(firstDownld, btnMore1);
-      showMore(firstDownldChild, btnMore2);
-
-      for (let i = 0; i < selectsChild5.length; i++) {
-        selectsChild5[0].style.display = "none";
-        selectsChild5[i].classList.remove("none");
-      }
-
-      for (let i = 0; i < selectsChild4.length; i++) {
-        selectsChild4[i].classList.remove("none");
-      }
-    }
-  }
-
   //filters
-
   let filtersSelect = (checkSelect, className) => {
     cardsNewList = [];
     checkSelect.forEach(function (elem) {
@@ -246,7 +197,6 @@ document.addEventListener("DOMContentLoaded", function () {
           cardsNewList.push(elem);
         }
       }
-      return cardsNewList;
     });
   };
 
@@ -265,8 +215,8 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         elem.classList.add("none");
       }
-      return cardsNewList;
     });
+
   };
   let arr = [];
   let clss;
@@ -279,13 +229,11 @@ document.addEventListener("DOMContentLoaded", function () {
       filtersSelect(selectItems, clss);
       filtersSelect(list1, clss);
       showMore(cardsNewList, btnMore1);
-      return clss;
     });
   });
 
   selectsChild1.forEach(function (e) {
     e.addEventListener("click", function () {
-      cardsNewList = [];
       clss = e.getAttribute("data-filter");
       let years = document.querySelector(".select-years");
       let titleSelect = document.querySelector(".title-child");
@@ -299,26 +247,26 @@ document.addEventListener("DOMContentLoaded", function () {
       showMore(cardsNewList, btnMore2);
       filtersSelect(list2, clss);
       showMore(cardsNewList, btnMore2);
-      selectsChild2.forEach(function (elem) {
-        elem.addEventListener("click", function () {
-          cls = elem.getAttribute("data-filter");
-          filtersSelectChild(selectsChild4, clss, cls);
-          showMore(cardsNewList, btnMore2);
-          filtersSelectChild(list2, clss, cls);
-          showMore(cardsNewList, btnMore2);
-        });
-      });
-      return clss;
     });
   });
 
+
   selectsChild2.forEach(function (e) {
     e.addEventListener("click", function () {
-      cardsNewList = [];
-      cls = e.getAttribute("data-filter");
-      filtersSelect(selectsChild4, cls);
-      filtersSelect(list2, cls);
-      showMore(cardsNewList, btnMore2);
+      let titleFound = document.querySelector('.title-year')
+      if (titleFound.textContent === titleFound.getAttribute("data-default")) {
+        cls = e.getAttribute("data-filter");
+        filtersSelect(selectsChild4, cls);
+        filtersSelect(list2, cls);
+        showMore(cardsNewList, btnMore2);
+      }
+      else {
+        cls = e.getAttribute("data-filter");
+        filtersSelectChild(selectsChild4, clss, cls);
+        showMore(cardsNewList, btnMore2);
+        filtersSelectChild(list2, clss, cls);
+        showMore(cardsNewList, btnMore2);
+      }
     });
   });
 
@@ -423,7 +371,53 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  //more
+  function resetFunc(select1, select2) {
+    let selects = [];
+    selects.push(select1);
+    selects.push(select2);
+    let cards = document.querySelectorAll(".programs__card");
+
+    for (let i = 0; i < selects.length; i++) {
+      for (let j = 0; j < selects[i].length; j++) {
+        selects[i][j].setAttribute("data-state", "");
+        let titles = selects[i][j].querySelectorAll(".titles");
+        let contents = selects[i][j].querySelectorAll(".contents");
+        for (let h = 0; h < titles.length; h++) {
+          titles[h].style.color = "#7C90A0";
+          titles[h].textContent = titles[h].getAttribute("data-default");
+          let checkboxes = document.getElementsByName("singleCheck");
+          for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+              checkboxes[i].checked = false;
+              result = 0;
+            }
+          }
+        }
+        for (let i = 0; i < contents.length; i++) {
+          contents[i].classList.add("select--disabled");
+        }
+      }
+      for (let i = 0; i < items.length; i++) {
+        items[i].classList.remove("none");
+      }
+
+      cards.forEach((e) => {
+        e.classList.remove("btn--none");
+        e.classList.remove("none");
+      });
+      showMore(firstDownld, btnMore1);
+      showMore(firstDownldChild, btnMore2);
+
+      for (let i = 0; i < selectsChild5.length; i++) {
+        selectsChild5[0].style.display = "none";
+        selectsChild5[i].classList.remove("none");
+      }
+
+      for (let i = 0; i < selectsChild4.length; i++) {
+        selectsChild4[i].classList.remove("none");
+      }
+    }
+  }
 
   function showMore(arr, btn) {
     let step,
