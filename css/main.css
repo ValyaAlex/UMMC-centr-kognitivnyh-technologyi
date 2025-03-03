@@ -27,6 +27,10 @@ html {
   text-decoration: none;
 }
 
+.section {
+  padding: 0;
+}
+
 .margin-reset {
   margin: 0;
 }
@@ -91,7 +95,7 @@ html {
   font-display: swap;
 }
 
-body {
+.body {
   min-width: 320px;
   font-family: "Core Sans A 45 Regular", sans-serif;
   font-weight: 400;

@@ -1,21 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   const selectsBig1 = document.querySelectorAll(".selects-1 .select__input");
-  const selectItems = document.querySelectorAll(
-    ".selects-1 .multiselect__item"
-  );
-  const selectsBig2 = document.querySelectorAll(
-    ".selects-1 .multiselect__input"
-  );
+  const selectItems = document.querySelectorAll(".selects-1 .multiselect__item");
+  const selectsBig2 = document.querySelectorAll(".selects-1 .multiselect__input");
   const list1 = document.querySelectorAll("#result .filtered");
 
   const selectsChild1 = document.querySelectorAll(".selects-2 .select__input");
+  const selectsChild6 = document.querySelectorAll(".selects-2 .select__label");
   const selectsChild2 = document.querySelectorAll(".selects-3 .select__input");
-  const selectsChild3 = document.querySelectorAll(
-    ".selects-2 .multiselect__input"
-  );
-  const selectsChild4 = document.querySelectorAll(
-    ".selects-2 .multiselect__item"
-  );
+  const selectsChild3 = document.querySelectorAll(".selects-2 .multiselect__input");
+  const selectsChild4 = document.querySelectorAll(".selects-2 .multiselect__item");
   const selectsChild5 = document.querySelectorAll(".selects-3 .select__label");
 
 
@@ -28,26 +21,24 @@ document.addEventListener("DOMContentLoaded", function () {
   let programChild = document.querySelector(".program-2");
   let resetBtn = document.querySelector(".reset");
   let resetBtn2 = document.querySelector(".reset-2");
-  const selectChild = document.querySelector("#singleSelect18");
+  const selectChild = document.querySelector("#singleSelect007");
   const items = document.querySelectorAll(".multiselect__item");
 
-  let firstDownld = Array.from(
-    document.querySelectorAll("#result .programs__card")
-  );
-
+  let firstDownld = Array.from(document.querySelectorAll("#result .programs__card"));
   showMore(firstDownld, btnMore1);
-
-  let firstDownldChild = Array.from(
-    document.querySelectorAll("#result-2 .programs__card")
-  );
-
+  let firstDownldChild = Array.from(document.querySelectorAll("#result-2 .programs__card"));
   showMore(firstDownldChild, btnMore2);
-
   let result = 0;
   //selects
   const selectSingle = document.querySelectorAll(".select");
   const selectContent = document.querySelectorAll(".select__content");
   let select0;
+  let arr = [];
+  let class1;
+  let class2;
+  let titleYears = document.querySelector(".title-year")
+  let titleDirection = document.querySelector(".title-child");
+  let titleCheck = document.querySelectorAll(".multiselect__title");
 
   selectSingle.forEach(function (e) {
     select0 = e.querySelector(".select0");
@@ -76,29 +67,49 @@ document.addEventListener("DOMContentLoaded", function () {
                 content.classList.add("select--disabled");
               });
 
-              select0.removeAttribute("checked");
-              let arr = [];
-              resetFunc(arr, multiselect);
+              titleCheck.forEach((elem) => {
+                elem.textContent = elem.getAttribute("data-default");
+                elem.style.color = "rgb(124, 144, 160)"
+
+                let checkboxes = document.getElementsByName("singleCheck");
+                for (let i = 0; i < checkboxes.length; i++) {
+                  if (checkboxes[i].checked) {
+                    checkboxes[i].checked = false;
+                    result = 0;
+                  }
+                }
+                arr = [];
+              })
             });
           }
+          document.addEventListener("click", (el) => {
+            const withinBoundaries = el.composedPath().includes(e);
+            if (!withinBoundaries) {
+              if (!content.classList.contains("select--disabled")) {
+                content.classList.add("select--disabled")
+                e.setAttribute("data-state", "");
+              }
+            }
+          })
         });
       }
 
       if (program.classList.contains("programs--active")) {
-        if (title.textContent.trim() !== title.getAttribute('data-default') || result > 0) {
+        if (title.textContent.trim() !== title.getAttribute("data-default") || result > 0) {
           resetBtn.classList.add("reset--active");
           resetBtn.addEventListener("click", function (e) {
             e.preventDefault();
             resetFunc(selectSingle, multiselect);
             resetBtn.classList.remove("reset--active");
+
           });
         }
       } else {
-        result = 0;
+        resetBtn.classList.remove("reset--active");
       }
 
       if (programChild.classList.contains("programs--active")) {
-        if (title.textContent.trim() !== title.getAttribute('data-default') || result > 0) {
+        if (title.textContent.trim() !== title.getAttribute("data-default") || result > 0) {
           resetBtn2.classList.add("reset--active");
           resetBtn2.addEventListener("click", function (e) {
             e.preventDefault();
@@ -106,6 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
             resetBtn2.classList.remove("reset--active");
           });
         }
+      } else {
+        resetBtn2.classList.remove("reset--active");
       }
     });
   });
@@ -120,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const pth = elem.currentTarget.dataset.path;
       let content = document.querySelector(`[data-target="${pth}"]`);
       let labels = content.getElementsByClassName("multiselect__input");
-      let title = e.querySelector(".multiselect__title");
+      let title = e.querySelector('.multiselect__title')
 
       if ("active" === e.getAttribute("data-state")) {
         e.setAttribute("data-state", "");
@@ -158,10 +171,19 @@ document.addEventListener("DOMContentLoaded", function () {
               }
             });
           }
+          document.addEventListener("click", (el) => {
+            const withinBoundaries = el.composedPath().includes(e);
+            if (!withinBoundaries) {
+              if (!content.classList.contains("select--disabled")) {
+                content.classList.add("select--disabled")
+                e.setAttribute("data-state", "");
+              }
+            }
+          })
         });
       }
       if (program.classList.contains("programs--active")) {
-        if (select0.hasAttribute("checked") === false && result > 0) {
+        if (select0.hasAttribute("checked") === false || result > 0) {
           resetBtn.classList.add("reset--active");
           resetBtn.addEventListener("click", function (e) {
             e.preventDefault();
@@ -172,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (programChild.classList.contains("programs--active")) {
-        if (selectChild.hasAttribute("checked") === false && result > 0) {
+        if (selectChild.hasAttribute("checked") === false || result > 0) {
           resetBtn2.classList.add("reset--active");
           resetBtn2.addEventListener("click", function (e) {
             e.preventDefault();
@@ -216,55 +238,51 @@ document.addEventListener("DOMContentLoaded", function () {
         elem.classList.add("none");
       }
     });
-
   };
-  let arr = [];
-  let clss;
-  let cls;
 
   selectsBig1.forEach(function (element) {
     element.addEventListener("click", function () {
       cardsNewList = [];
-      clss = element.getAttribute("data-filter");
-      filtersSelect(selectItems, clss);
-      filtersSelect(list1, clss);
+      class1 = element.getAttribute("data-filter");
+      filtersSelect(selectItems, class1);
+      filtersSelect(list1, class1);
       showMore(cardsNewList, btnMore1);
+    });
+  });
+
+  selectsChild2.forEach(function (e) {
+    e.addEventListener("click", function () {
+      if (titleYears.textContent === titleYears.getAttribute("data-default") || class1 === undefined) {
+        class2 = e.getAttribute("data-filter");
+        filtersSelect(selectsChild6, class2);
+        filtersSelect(selectsChild4, class2);
+        filtersSelect(list2, class2);
+        showMore(cardsNewList, btnMore2);
+      }
+      else {
+        class2 = e.getAttribute("data-filter");
+        filtersSelect(selectsChild6, class2)
+        filtersSelectChild(selectsChild4, class1, class2);
+        filtersSelectChild(list2, class1, class2);
+        showMore(cardsNewList, btnMore2);
+      }
     });
   });
 
   selectsChild1.forEach(function (e) {
     e.addEventListener("click", function () {
-      clss = e.getAttribute("data-filter");
-      let years = document.querySelector(".select-years");
-      let titleSelect = document.querySelector(".title-child");
-      years.addEventListener("click", function () {
-        titleSelect.textContent = titleSelect.getAttribute("data-default");
-        titleSelect.style.color = "#7C90A0";
-      });
-      filtersSelect(selectsChild5, clss);
-      showMore(cardsNewList, btnMore2);
-      filtersSelect(selectsChild4, clss);
-      showMore(cardsNewList, btnMore2);
-      filtersSelect(list2, clss);
-      showMore(cardsNewList, btnMore2);
-    });
-  });
-
-
-  selectsChild2.forEach(function (e) {
-    e.addEventListener("click", function () {
-      let titleFound = document.querySelector('.title-year')
-      if (titleFound.textContent === titleFound.getAttribute("data-default")) {
-        cls = e.getAttribute("data-filter");
-        filtersSelect(selectsChild4, cls);
-        filtersSelect(list2, cls);
+      if (titleDirection.textContent === titleDirection.getAttribute("data-default") || class2 === undefined) {
+        class1 = e.getAttribute("data-filter");
+        filtersSelect(selectsChild5, class1);
+        filtersSelect(selectsChild4, class1);
+        filtersSelect(list2, class1);
         showMore(cardsNewList, btnMore2);
       }
       else {
-        cls = e.getAttribute("data-filter");
-        filtersSelectChild(selectsChild4, clss, cls);
-        showMore(cardsNewList, btnMore2);
-        filtersSelectChild(list2, clss, cls);
+        class1 = e.getAttribute("data-filter");
+        filtersSelect(selectsChild5, class1);
+        filtersSelectChild(selectsChild4, class1, class2);
+        filtersSelectChild(list2, class1, class2);
         showMore(cardsNewList, btnMore2);
       }
     });
@@ -300,16 +318,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (arr.length === 0) {
-        if (clss === undefined) {
+        if (class1 === undefined) {
           resetFunc(selectSingle, multiselect);
         } else {
-          cardsNewList = [];
           Array.from(list1).forEach(function (e) {
             e.classList.remove("none");
-            resetBtn.classList.add("none");
+            filtersSelect(list1, class1);
           });
-          filtersSelect(list1, clss);
-          showMore(cardsNewList, btnMore1);
+
         }
       } else {
         resetBtn.classList.remove("none");
@@ -325,7 +341,6 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < arr.length; i++) {
           if (!arr[i].checked) {
             arr.splice(i, 1);
-            console.log(arr.length);
           }
         }
       }
@@ -334,35 +349,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (arr.length === 0) {
         btnMore2.style.display = "none";
-        if (clss === undefined && cls === undefined) {
+        if (class1 === undefined && class2 === undefined) {
           resetFunc(selectSingle, multiselect);
         }
 
-        if (clss !== undefined && cls === undefined) {
-          console.log(clss, "+");
+        if (class1 !== undefined && class2 === undefined) {
           Array.from(list2).forEach(function (e) {
             e.classList.remove("none");
             resetBtn.classList.add("none");
           });
-          filtersSelect(list2, clss);
+          filtersSelect(list2, class1);
           showMore(cardsNewList, btnMore2);
         }
-        if (clss === undefined && cls !== undefined) {
-          console.log("-");
+        if (class1 === undefined && class2 !== undefined) {
           Array.from(list2).forEach(function (e) {
             e.classList.remove("none");
             resetBtn.classList.add("none");
           });
-          filtersSelect(list2, cls);
+          filtersSelect(list2, class2);
           showMore(cardsNewList, btnMore2);
         }
-        if (clss !== undefined && cls !== undefined) {
-          console.log("~");
+        if (class1 !== undefined && class2 !== undefined) {
           Array.from(list2).forEach(function (e) {
             e.classList.remove("none");
             resetBtn.classList.add("none");
           });
-          filtersSelectChild(list2, clss, cls);
+          filtersSelectChild(list2, class1, class2);
           showMore(cardsNewList, btnMore2);
         }
       } else {
@@ -408,6 +420,9 @@ document.addEventListener("DOMContentLoaded", function () {
       showMore(firstDownld, btnMore1);
       showMore(firstDownldChild, btnMore2);
 
+      class2 = undefined;
+      class1 = undefined;
+
       for (let i = 0; i < selectsChild5.length; i++) {
         selectsChild5[0].style.display = "none";
         selectsChild5[i].classList.remove("none");
@@ -415,6 +430,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       for (let i = 0; i < selectsChild4.length; i++) {
         selectsChild4[i].classList.remove("none");
+      }
+
+      for (let i = 0; i < selectsChild6.length; i++) {
+        selectsChild6[i].classList.remove("none");
       }
     }
   }

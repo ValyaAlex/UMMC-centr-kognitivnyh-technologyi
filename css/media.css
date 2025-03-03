@@ -31,14 +31,14 @@
 
   .reset-2::before {
     right: auto;
-    left: 220px;
-    top: 32%;
+    left: 203px;
+    top: 30%;
   }
 
   .reset-2::after {
     right: auto;
-    left: 230px;
-    top: 61%;
+    left: 210px;
+    top: 55%;
   }
 
   .science__card {
@@ -290,14 +290,14 @@
 
   .reset::before {
     right: auto;
-    left: 220px;
+    left: 205px;
     top: 32%;
   }
 
   .reset::after {
     right: auto;
-    left: 230px;
-    top: 61%;
+    left: 212px;
+    top: 56%;
   }
 
   .programs__card {
@@ -327,8 +327,23 @@
     padding: 25px;
   }
 
+  .select,
+  .multiselect {
+    height: 60px;
+  }
+
+  .reset-2 {
+    padding-top: 8px;
+    padding-left: 15px;
+  }
+
   .reset-2::after {
-    top: 50%;
+    top: 44%;
+  }
+
+  .select__content,
+  .multiselect__content {
+    top: 65px;
   }
 
   .filters-320 {
@@ -435,8 +450,12 @@
     width: 99%;
   }
 
+  .reset-2 {
+    padding-top: 15px;
+  }
+
   .reset-2::after {
-    top: 61%;
+    top: 55%;
   }
 
   #result-2 {
@@ -478,6 +497,7 @@
 
   .call__text {
     width: 100%;
+    text-align: center;
   }
 
   .call__bg {
@@ -490,7 +510,7 @@
 
   .reset,
   .reset-2 {
-    width: 50%;
+    width: 100%;
   }
 
   .form__filters {
@@ -670,5 +690,9 @@
   .modal__btn-close {
     top: 24px;
     right: 20px;
+  }
+
+  .modal__more {
+    padding: 10px 14px;
   }
 }

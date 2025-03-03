@@ -38,7 +38,7 @@
   <script defer src="./js/filter-btn.js"></script>
 </head>
 
-<body>
+<body class="body">
   <div class="responsive-overlay"></div>
   <header class="header">
     <div class="container header__container">
@@ -103,7 +103,7 @@
     </div>
   </header>
   <main>
-    <section class="hero">
+    <section class="section hero">
       <div class="container">
         <div class="hero__container">
           <div class="hero__banner">
@@ -257,7 +257,7 @@
         </div>
       </div>
     </section>
-    <section class="programs" id="programs">
+    <section class="section programs" id="programs">
       <div class="container">
         <h2 class="margin-reset title">Программы</h2>
         <div class="filters-320">
@@ -290,7 +290,6 @@
                 <div class="select__title titles" data-default="Направления">
                   Направления
                 </div>
-                <!-- <div class="delete"></div> -->
                 <div class="select__content contents select--disabled" data-target="1">
                   <input id="singleSelect0" class="select__input select0" type="radio" name="singleSelect" checked />
                   <label for="singleSelect0" class="select__label">Направления</label>
@@ -325,11 +324,13 @@
                   <input id="singleSelect10" class="select__input" type="radio" name="singleSelect"
                     data-filter="communication" />
                   <label for="singleSelect10" class="select__label">Коммуникация</label>
-                  <input id="singleSelect00" class="select__input" type="radio" name="singleSelect"
+                  <input id="singleSelect11" class="select__input" type="radio" name="singleSelect"
                     data-filter="diagnosticOld" />
-                  <label for="singleSelect00" class="select__label">Диагностика</label>
-                  <input id="singleSelect34" class="select__input" type="radio" name="singleSelect" data-filter="oda" />
-                  <label for="singleSelect34" class="select__label">Нарушение опорно-двигательного аппарата</label>
+                  <label for="singleSelect11" class="select__label">Диагностика</label>
+                  <input id="singleSelect12" class="select__input" type="radio" name="singleSelect" data-filter="oda" />
+                  <label for="singleSelect12" class="select__label">Нарушение опорно-двигательного аппарата</label>
+                  <input id="singleSelect13" class="select__input" type="radio" name="singleSelect" data-filter="all" />
+                  <label for="singleSelect13" class="select__label">Показать все программы и методики</label>
                 </div>
               </div>
 
@@ -337,9 +338,8 @@
                 <div class="multiselect__title titles" data-default="Методики">
                   Методики
                 </div>
-                <!-- <div class="delete"></div> -->
                 <ul class="list-reset multiselect__content contents select--disabled" data-target="4">
-                  <li class="multiselect__item cognitive pregnant dizziness communication">
+                  <li class="multiselect__item cognitive pregnant dizziness communication all">
                     <input id="singleCheck2" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="tomatis" />
                     <span></span>
@@ -347,120 +347,120 @@
                       Томатиса</label>
                   </li>
                   <li
-                    class="multiselect__item cognitive dementia eating-behavior pregnant dizziness panic depression stutter communication">
+                    class="multiselect__item cognitive dementia eating-behavior pregnant dizziness panic depression stutter communication all">
                     <input id="singleCheck3" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="bak" />
                     <span></span>
                     <label for="singleCheck3" class="multiselect__label">Биоакустическая коррекция (БАК)</label>
                   </li>
-                  <li class="multiselect__item cognitive dementia stutter">
+                  <li class="multiselect__item cognitive dementia stutter all">
                     <input id="singleCheck4" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="metronom" />
                     <span></span>
                     <label for="singleCheck4" class="multiselect__label">Интерактивный метроном</label>
                   </li>
-                  <li class="multiselect__item cognitive dementia communication">
+                  <li class="multiselect__item cognitive dementia communication all">
                     <input id="singleCheck5" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="intime" />
                     <span></span>
                     <label for="singleCheck5" class="multiselect__label">InTime</label>
                   </li>
-                  <li class="multiselect__item cognitive">
+                  <li class="multiselect__item cognitive all">
                     <input id="singleCheck6" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="tkmp" />
                     <span></span>
                     <label for="singleCheck6" class="multiselect__label">Транскраниальная микрополяризация
                     </label>
                   </li>
-                  <li class="multiselect__item cognitive dizziness">
+                  <li class="multiselect__item cognitive dizziness all">
                     <input id="singleCheck7" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="bilgou" />
                     <span></span>
                     <label for="singleCheck7" class="multiselect__label">Мозжечковая стимуляция</label>
                   </li>
-                  <li class="multiselect__item cognitive dementia parkinson dizziness">
+                  <li class="multiselect__item cognitive dementia parkinson dizziness all">
                     <input id="singleCheck8" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="stabilo" />
                     <span></span>
                     <label for="singleCheck8" class="multiselect__label">Стабилотренажер</label>
                   </li>
-                  <li class="multiselect__item cognitive">
+                  <li class="multiselect__item cognitive all">
                     <input id="singleCheck9" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="vokastim" />
                     <span></span>
                     <label for="singleCheck9" class="multiselect__label">Вокастим</label>
                   </li>
-                  <li class="multiselect__item cognitive dementia parkinson">
+                  <li class="multiselect__item cognitive dementia parkinson all">
                     <input id="singleCheck10" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="neyroport" />
                     <span></span>
                     <label for="singleCheck10" class="multiselect__label">Нейропорт</label>
                   </li>
-                  <li class="multiselect__item cognitive dementia">
+                  <li class="multiselect__item cognitive dementia all">
                     <input id="singleCheck11" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="kolibri" />
                     <span></span>
                     <label for="singleCheck11" class="multiselect__label">Колибри</label>
                   </li>
-                  <li class="multiselect__item cognitive">
+                  <li class="multiselect__item cognitive all">
                     <input id="singleCheck12" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="fitlight" />
                     <span></span>
                     <label for="singleCheck12" class="multiselect__label">Фитлайт</label>
                   </li>
-                  <li class="multiselect__item dementia">
+                  <li class="multiselect__item dementia all">
                     <input id="singleCheck13" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="kinekt" />
                     <span></span>
                     <label for="singleCheck13" class="multiselect__label">Когнитивно-двигательное занятие
                       "Кинект"</label>
                   </li>
-                  <li class="multiselect__item dementia parkinson">
+                  <li class="multiselect__item dementia parkinson all">
                     <input id="singleCheck14" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="ritmoBos" />
                     <span></span>
                     <label for="singleCheck14" class="multiselect__label">РитмоБос</label>
                   </li>
                   <li
-                    class="multiselect__item eating-behavior pregnant dizziness panic depression stutter communication">
+                    class="multiselect__item eating-behavior pregnant dizziness panic depression stutter communication all">
                     <input id="singleCheck15" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="boslab" />
                     <span></span>
                     <label for="singleCheck15" class="multiselect__label">БОСЛАБ-Профи</label>
                   </li>
-                  <li class="multiselect__item parkinson">
+                  <li class="multiselect__item parkinson all">
                     <input id="singleCheck16" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="timokko" />
                     <span></span>
                     <label for="singleCheck16" class="multiselect__label">Тимокко</label>
                   </li>
-                  <li class="multiselect__item dizziness panic depression communication">
+                  <li class="multiselect__item dizziness panic depression communication all">
                     <input id="singleCheck17" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="tlp" />
                     <span></span>
                     <label for="singleCheck17" class="multiselect__label">The Listening Program (TLP)</label>
                   </li>
-                  <li class="multiselect__item stutter communication">
+                  <li class="multiselect__item stutter communication all">
                     <input id="singleCheck18" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="music-therapy" />
                     <span></span>
                     <label for="singleCheck18" class="multiselect__label">Музыкотерапия</label>
                   </li>
-                  <li class="multiselect__item stutter communication">
+                  <li class="multiselect__item stutter communication all">
                     <input id="singleCheck19" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="vocal-therapy" />
                     <span></span>
                     <label for="singleCheck19" class="multiselect__label">Вокалотерапия</label>
                   </li>
 
-                  <li class="multiselect__item diagnosticOld">
+                  <li class="multiselect__item diagnosticOld all">
                     <input id="singleCheck20" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnosticOld1" />
                     <span></span>
                     <label for="singleCheck20" class="multiselect__label">ADOS-2</label>
                   </li>
 
-                  <li class="multiselect__item diagnosticOld">
+                  <li class="multiselect__item diagnosticOld all">
                     <input id="singleCheck21" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnosticOld2" />
                     <span></span>
@@ -468,7 +468,7 @@
                       взрослых</label>
                   </li>
 
-                  <li class="multiselect__item diagnosticOld">
+                  <li class="multiselect__item diagnosticOld all">
                     <input id="singleCheck22" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnosticOld3" />
                     <span></span>
@@ -476,28 +476,28 @@
                       поведения</label>
                   </li>
 
-                  <li class="multiselect__item diagnosticOld">
+                  <li class="multiselect__item diagnosticOld all">
                     <input id="singleCheck23" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnosticOld4" />
                     <span></span>
                     <label for="singleCheck23" class="multiselect__label">Тест Векслера</label>
                   </li>
 
-                  <li class="multiselect__item diagnosticOld">
+                  <li class="multiselect__item diagnosticOld all">
                     <input id="singleCheck24" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnosticOld5" />
                     <span></span>
                     <label for="singleCheck24" class="multiselect__label">Leither-III</label>
                   </li>
 
-                  <li class="multiselect__item oda">
+                  <li class="multiselect__item oda all">
                     <input id="singleCheck25" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="tape" />
                     <span></span>
                     <label for="singleCheck25" class="multiselect__label">Кинезиологическое тейпирование</label>
                   </li>
 
-                  <li class="multiselect__item panic oda dizziness depression">
+                  <li class="multiselect__item panic oda dizziness depression all">
                     <input id="singleCheck26" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="acupuncture" />
                     <span></span>
@@ -509,7 +509,8 @@
             </div>
           </form>
           <div class="programs__cards" id="result">
-            <div class="programs__card filtered cognitive pregnant dizziness communication tomatis" data-path="tomatis">
+            <div class="programs__card filtered all cognitive pregnant dizziness communication tomatis"
+              data-path="tomatis">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Аудио-психо-фоно стимуляция им. А. Томатиса
@@ -528,20 +529,20 @@
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered cognitive dementia stutter metronom" data-path="metronom">
+            <div class="programs__card filtered all cognitive dementia stutter metronom" data-path="metronom">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Интерактивный метроном</h3>
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered cognitive dementia communication intime" data-path="intim">
+            <div class="programs__card filtered all cognitive dementia communication intime" data-path="intim">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">InTime</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered cognitive tkmp" data-path="tkmp">
+            <div class="programs__card filtered all cognitive tkmp" data-path="tkmp">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Транскраниальная микрополяризация
@@ -550,49 +551,49 @@
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered cognitive dizziness bilgou" data-path="bilgou">
+            <div class="programs__card filtered all cognitive dizziness bilgou" data-path="bilgou">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Мозжечковая стимуляция</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered cognitive dementia parkinson dizziness stabilo" data-path="slabilo">
+            <div class="programs__card filtered all cognitive dementia parkinson dizziness stabilo" data-path="slabilo">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Стабилотренажер</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered cognitive vokastim" data-path="voka">
+            <div class="programs__card filtered all cognitive vokastim" data-path="voka">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Вокастим</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered cognitive dementia parkinson neyroport" data-path="neyroport">
+            <div class="programs__card filtered all cognitive dementia parkinson neyroport" data-path="neyroport">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Нейропорт</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered cognitive dementia kolibri" data-path="kolibri">
+            <div class="programs__card filtered all cognitive dementia kolibri" data-path="kolibri">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Колибри</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered cognitive fitlight" data-path="fit">
+            <div class="programs__card filtered all cognitive fitlight" data-path="fit">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Фитлайт</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered dementia kinekt" data-path="iir">
+            <div class="programs__card filtered all dementia kinekt" data-path="iir">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Когнитивно-двигательное занятие "Кинект"
@@ -601,7 +602,7 @@
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered dementia parkinson ritmoBos" data-path="ritmobos">
+            <div class="programs__card filtered all dementia parkinson ritmoBos" data-path="ritmobos">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">РитмоБос</h3>
 
@@ -617,42 +618,42 @@
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered parkinson timokko" data-path="timokko">
+            <div class="programs__card filtered all parkinson timokko" data-path="timokko">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Тимокко</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered dizziness panic depression communication tlp" data-path="tlp">
+            <div class="programs__card filtered all dizziness panic depression communication tlp" data-path="tlp">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">The Listening Program (TLP)</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered stutter communication music-therapy" data-path="music-therapy">
+            <div class="programs__card filtered all stutter communication music-therapy" data-path="music-therapy">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Музыкотерапия</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered stutter communication vocal-therapy" data-path="vocal-therapy">
+            <div class="programs__card filtered all stutter communication vocal-therapy" data-path="vocal-therapy">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Вокалотерапия</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered diagnosticOld diagnosticOld1 ados" data-path="ados">
+            <div class="programs__card filtered all diagnosticOld diagnosticOld1 ados" data-path="ados">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">ADOS-2</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered diagnosticOld diagnosticOld2 personality-disorders"
+            <div class="programs__card filtered all diagnosticOld diagnosticOld2 personality-disorders"
               data-path="personality-disorders">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
@@ -662,7 +663,7 @@
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered diagnosticOld diagnosticOld3 dependence" data-path="dependence">
+            <div class="programs__card filtered all diagnosticOld diagnosticOld3 dependence" data-path="dependence">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Диагностика вероятного зависимого поведения
@@ -671,14 +672,14 @@
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered diagnosticOld diagnosticOld4 veksler" data-path="veksler">
+            <div class="programs__card filtered all diagnosticOld diagnosticOld4 veksler" data-path="veksler">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Тест Векслера</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div class="programs__card filtered diagnosticOld diagnosticOld5 leither" data-path="leither">
+            <div class="programs__card filtered all diagnosticOld diagnosticOld5 leither" data-path="leither">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Leither-III</h3>
 
@@ -686,7 +687,7 @@
               </div>
             </div>
 
-            <div class="programs__card filtered oda tape kinesio" data-path="kinesio">
+            <div class="programs__card filtered all oda tape kinesio" data-path="kinesio">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Кинезиологическое тейпирование
@@ -696,7 +697,7 @@
               </div>
             </div>
 
-            <div class="programs__card filtered panic oda dizziness depression acupuncture iglo" data-path="iglo">
+            <div class="programs__card filtered all panic oda dizziness depression acupuncture iglo" data-path="iglo">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Иглорефлексотерапия</h3>
 
@@ -715,21 +716,33 @@
                   Возраст
                 </div>
                 <div class="select__content contents select--disabled" data-target="2">
-                  <input id="singleSelect11" class="select__input select0" type="radio" name="singleSelect" checked />
-                  <label for="singleSelect11" class="select__label">Возраст</label>
-                  <input id="singleSelect12" class="select__input" type="radio" name="singleSelect" data-filter="0-3" />
-                  <label for="singleSelect12" class="select__label">от 0 до 3</label>
-                  <input id="singleSelect13" class="select__input" type="radio" name="singleSelect" data-filter="4-9" />
-                  <label for="singleSelect13" class="select__label">от 4 до 9</label>
-                  <input id="singleSelect14" class="select__input" type="radio" name="singleSelect"
+                  <input id="singleSelect001" class="select__input select0" type="radio" name="singleSelect" checked />
+                  <label for="singleSelect001" class="select__label">Возраст</label>
+                  <input id="singleSelect002" class="select__input" type="radio" name="singleSelect"
+                    data-filter="0-3" />
+                  <label for="singleSelect002"
+                    class="select__label allChild asd adhd dysarthria dyspraxia stutter gus ius emotional-disorders headache neurosis tests odaChild aggressive">от
+                    0 до 3</label>
+                  <input id="singleSelect003" class="select__input" type="radio" name="singleSelect"
+                    data-filter="4-9" />
+                  <label for="singleSelect003"
+                    class="select__label allChild asd adhd dysarthria dyspraxia stutter gus ius preparing disadaptation1 disadaptation2 disadaptation3 emotional-disorders headache neurosis tests odaChild aggressive">от
+                    4 до 9</label>
+                  <input id="singleSelect004" class="select__input" type="radio" name="singleSelect"
                     data-filter="7-10" />
-                  <label for="singleSelect14" class="select__label">от 7 до 10</label>
-                  <input id="singleSelect15" class="select__input" type="radio" name="singleSelect"
+                  <label for="singleSelect004"
+                    class="select__label allChild asd adhd dysarthria dyspraxia stutter gus ius preparing disadaptation1 disadaptation2 disadaptation3 emotional-disorders headache neurosis tests odaChild aggressive">от
+                    7 до 10</label>
+                  <input id="singleSelect005" class="select__input" type="radio" name="singleSelect"
                     data-filter="11-13" />
-                  <label for="singleSelect15" class="select__label">от 11 до 13</label>
-                  <input id="singleSelect16" class="select__input" type="radio" name="singleSelect"
+                  <label for="singleSelect005"
+                    class="select__label allChild asd adhd dysarthria dyspraxia stutter gus ius preparing disadaptation1 disadaptation2 disadaptation3 emotional-disorders headache neurosis tests odaChild aggressive">от
+                    11 до 13</label>
+                  <input id="singleSelect006" class="select__input" type="radio" name="singleSelect"
                     data-filter="14-17" />
-                  <label for="singleSelect16" class="select__label">от 14 до 17</label>
+                  <label for="singleSelect006"
+                    class="select__label allChild asd adhd dysarthria dyspraxia stutter gus ius disadaptation1 disadaptation2 disadaptation3 emotional-disorders headache neurosis tests odaChild aggressive">от
+                    14 до 17</label>
                 </div>
               </div>
               <div class="select selects-3" data-state="" data-path="3">
@@ -737,72 +750,76 @@
                   Направления
                 </div>
                 <div class="select__content contents select--disabled" data-target="3">
-                  <input id="singleSelect18" class="select__input select0" type="radio" name="singleSelect" checked />
-                  <label for="singleSelect18" class="select__label">Направления</label>
-                  <input id="singleSelect19" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
+                  <input id="singleSelect007" class="select__input select0" type="radio" name="singleSelect" checked />
+                  <label for="singleSelect007" class="select__label">Направления</label>
+                  <input id="singleSelect008" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
                     name="singleSelect" data-filter="adhd" />
-                  <label for="singleSelect19" class="select__label 0-3 4-9 7-10 11-13 14-17">СДВГ</label>
-                  <input id="singleSelect20" class="select__input 0-3 4-9 7-10 11-13 14-17 diagnostic" type="radio"
+                  <label for="singleSelect008" class="select__label 0-3 4-9 7-10 11-13 14-17">СДВГ</label>
+                  <input id="singleSelect009" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
                     name="singleSelect" data-filter="asd" />
-                  <label for="singleSelect20" class="select__label 0-3 4-9 7-10 11-13 14-17">РАС</label>
-                  <input id="singleSelect21" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
+                  <label for="singleSelect009" class="select__label 0-3 4-9 7-10 11-13 14-17">РАС</label>
+                  <input id="singleSelect010" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
                     name="singleSelect" data-filter="dysarthria" />
-                  <label for="singleSelect21" class="select__label 0-3 4-9 7-10 11-13 14-17">Дизартрия</label>
-                  <input id="singleSelect22" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
+                  <label for="singleSelect010" class="select__label 0-3 4-9 7-10 11-13 14-17">Дизартрия</label>
+                  <input id="singleSelect011" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
                     name="singleSelect" data-filter="dyspraxia" />
-                  <label for="singleSelect22" class="select__label 0-3 4-9 7-10 11-13 14-17">Диспраксия</label>
-                  <input id="singleSelect23" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
+                  <label for="singleSelect011" class="select__label 0-3 4-9 7-10 11-13 14-17">Диспраксия</label>
+                  <input id="singleSelect012" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
                     name="singleSelect" data-filter="stutter" />
-                  <label for="singleSelect23" class="select__label 0-3 4-9 7-10 11-13 14-17">Заикание</label>
-                  <input id="singleSelect24" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
+                  <label for="singleSelect012" class="select__label 0-3 4-9 7-10 11-13 14-17">Заикание</label>
+                  <input id="singleSelect013" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
                     name="singleSelect" data-filter="gus" />
-                  <label for="singleSelect24" class="select__label 0-3 4-9 7-10 11-13 14-17">Общее недоразвитие
+                  <label for="singleSelect013" class="select__label 0-3 4-9 7-10 11-13 14-17">Общее недоразвитие
                     речи</label>
-                  <input id="singleSelect25" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
+                  <input id="singleSelect014" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
                     name="singleSelect" data-filter="ius" />
-                  <label for="singleSelect25" class="select__label 0-3 4-9 7-10 11-13 14-17">Нарушение понимания
+                  <label for="singleSelect014" class="select__label 0-3 4-9 7-10 11-13 14-17">Нарушение понимания
                     речи</label>
-                  <input id="singleSelect32" class="select__input 4-9 7-10 11-13" type="radio" name="singleSelect"
+                  <input id="singleSelect015" class="select__input 4-9 7-10 11-13" type="radio" name="singleSelect"
                     data-filter="preparing" />
-                  <label for="singleSelect32" class="select__label 4-9 7-10 11-13">Подготовка к школе</label>
-                  <input id="singleSelect26" class="select__input 4-9 7-10 11-13 14-17" type="radio" name="singleSelect"
-                    data-filter="disadaptation1" />
-                  <label for="singleSelect26" class="select__label 4-9 7-10 11-13 14-17">Школьная дезадаптация:
+                  <label for="singleSelect015" class="select__label 4-9 7-10 11-13">Подготовка к школе</label>
+                  <input id="singleSelect016" class="select__input 4-9 7-10 11-13 14-17" type="radio"
+                    name="singleSelect" data-filter="disadaptation1" />
+                  <label for="singleSelect016" class="select__label 4-9 7-10 11-13 14-17">Школьная дезадаптация:
                     нарушение чтения</label>
-                  <input id="singleSelect27" class="select__input 4-9 7-10 11-13 14-17" type="radio" name="singleSelect"
-                    data-filter="disadaptation2" />
-                  <label for="singleSelect27" class="select__label 4-9 7-10 11-13 14-17">Школьная дезадаптация:
+                  <input id="singleSelect017" class="select__input 4-9 7-10 11-13 14-17" type="radio"
+                    name="singleSelect" data-filter="disadaptation2" />
+                  <label for="singleSelect017" class="select__label 4-9 7-10 11-13 14-17">Школьная дезадаптация:
                     математика</label>
-                  <input id="singleSelect28" class="select__input 4-9 7-10 11-13 14-17" type="radio" name="singleSelect"
-                    data-filter="disadaptation3" />
-                  <label for="singleSelect28" class="select__label 4-9 7-10 11-13 14-17">Школьная дезадаптация:
+                  <input id="singleSelect018" class="select__input 4-9 7-10 11-13 14-17" type="radio"
+                    name="singleSelect" data-filter="disadaptation3" />
+                  <label for="singleSelect018" class="select__label 4-9 7-10 11-13 14-17">Школьная дезадаптация:
                     нарушение письма</label>
-                  <input id="singleSelect29" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
+                  <input id="singleSelect019" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
                     name="singleSelect" data-filter="emotional-disorders" />
-                  <label for="singleSelect29" class="select__label 0-3 4-9 7-10 11-13 14-17">Эмоционально-волевые
+                  <label for="singleSelect019" class="select__label 0-3 4-9 7-10 11-13 14-17">Эмоционально-волевые
                     нарушения</label>
-                  <input id="singleSelect30" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
+                  <input id="singleSelect020" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
                     name="singleSelect" data-filter="headache" />
-                  <label for="singleSelect30" class="select__label 0-3 4-9 7-10 11-13 14-17">Головная боль, напряжения,
+                  <label for="singleSelect020" class="select__label 0-3 4-9 7-10 11-13 14-17">Головная боль, напряжения,
                     мигрень</label>
-                  <input id="singleSelect31" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
+                  <input id="singleSelect021" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
                     name="singleSelect" data-filter="neurosis" />
-                  <label for="singleSelect31" class="select__label 0-3 4-9 7-10 11-13 14-17">Невроз, навязчивости,
+                  <label for="singleSelect021" class="select__label 0-3 4-9 7-10 11-13 14-17">Невроз, навязчивости,
                     тревога, зависимости, тики</label>
 
-                  <input id="singleSelect33" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
+                  <input id="singleSelect022" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
                     name="singleSelect" data-filter="tests" />
-                  <label for="singleSelect33" class="select__label 0-3 4-9 7-10 11-13 14-17">Диагностика</label>
+                  <label for="singleSelect022" class="select__label 0-3 4-9 7-10 11-13 14-17">Диагностика</label>
 
-                  <input id="singleSelect35" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
+                  <input id="singleSelect023" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
                     name="singleSelect" data-filter="odaChild" />
-                  <label for="singleSelect35" class="select__label 0-3 4-9 7-10 11-13 14-17">Нарушение
+                  <label for="singleSelect023" class="select__label 0-3 4-9 7-10 11-13 14-17">Нарушение
                     опорно-двигательного аппарата</label>
 
-                  <input id="singleSelect36" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
+                  <input id="singleSelect024" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
                     name="singleSelect" data-filter="aggressive" />
-                  <label for="singleSelect36" class="select__label 0-3 4-9 7-10 11-13 14-17">Агрессивное и опасное
+                  <label for="singleSelect024" class="select__label 0-3 4-9 7-10 11-13 14-17">Агрессивное и опасное
                     поведение</label>
+                  <input id="singleSelect025" class="select__input 0-3 4-9 7-10 11-13 14-17" type="radio"
+                    name="singleSelect" data-filter="allChild" />
+                  <label for="singleSelect025" class="select__label 0-3 4-9 7-10 11-13 14-17">Показать все программы и
+                    методики</label>
                 </div>
               </div>
 
@@ -811,405 +828,407 @@
                   Методики
                 </div>
                 <ul class="list-reset multiselect__content contents select--disabled" data-target="5">
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 asd dyspraxia ius emotional-disorders">
-                    <input id="singleCheck100" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 asd dyspraxia ius emotional-disorders">
+                    <input id="singleCheck001" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="sensory" />
                     <span></span>
-                    <label for="singleCheck100" class="multiselect__label">Сенсорная интеграция</label>
+                    <label for="singleCheck001" class="multiselect__label">Сенсорная интеграция</label>
                   </li>
-                  <li class="multiselect__item 4-9 7-10 11-13 14-17 tests asd dyspraxia ius emotional-disorders">
-                    <input id="singleCheck139" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li
+                    class="multiselect__item allChild 4-9 7-10 11-13 14-17 tests asd dyspraxia ius emotional-disorders">
+                    <input id="singleCheck002" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic4" />
                     <span></span>
-                    <label for="singleCheck139" class="multiselect__label">DeGangi-Berk</label>
+                    <label for="singleCheck002" class="multiselect__label">DeGangi-Berk</label>
                   </li>
-                  <li class="multiselect__item 0-3 tests asd dyspraxia ius emotional-disorders">
-                    <input id="singleCheck146" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 tests asd dyspraxia ius emotional-disorders">
+                    <input id="singleCheck003" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic11" />
                     <span></span>
-                    <label for="singleCheck146" class="multiselect__label">TSFI</label>
+                    <label for="singleCheck003" class="multiselect__label">TSFI</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 asd ius disadaptation1">
-                    <input id="singleCheck101" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 asd ius disadaptation1">
+                    <input id="singleCheck004" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="tomatisChild" />
                     <span></span>
-                    <label for="singleCheck101" class="multiselect__label">Аудио-психо-фоно стимуляция им. А.
+                    <label for="singleCheck004" class="multiselect__label">Аудио-психо-фоно стимуляция им. А.
                       Томатиса</label>
                   </li>
                   <li
                     class="multiselect__item 0-3 4-9 7-10 11-13 14-17 adhd asd stutter gus disadaptation1 disadaptation3 emotional-disorders headache neurosis">
-                    <input id="singleCheck102" class="multiselect__input" type="checkbox" name="singleCheck"
+                    <input id="singleCheck005" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="bakChild" />
                     <span></span>
-                    <label for="singleCheck102" class="multiselect__label">Биоакустическая коррекция (БАК)</label>
+                    <label for="singleCheck005" class="multiselect__label">Биоакустическая коррекция (БАК)</label>
                   </li>
                   <li
                     class="multiselect__item 4-9 7-10 11-13 14-17 asd dysarthria stutter gus preparing disadaptation1 disadaptation2 disadaptation3 emotional-disorders">
-                    <input id="singleCheck103" class="multiselect__input" type="checkbox" name="singleCheck"
+                    <input id="singleCheck006" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="metronomChild" />
                     <span></span>
-                    <label for="singleCheck103" class="multiselect__label">Интерактивный метроном</label>
+                    <label for="singleCheck006" class="multiselect__label">Интерактивный метроном</label>
                   </li>
                   <li
                     class="multiselect__item 0-3 4-9 7-10 11-13 14-17 adhd asd dysarthria dyspraxia stutter gus ius preparing disadaptation1 disadaptation2 disadaptation3 neurosis">
-                    <input id="singleCheck104" class="multiselect__input" type="checkbox" name="singleCheck"
+                    <input id="singleCheck007" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="intimChild" />
                     <span></span>
-                    <label for="singleCheck104" class="multiselect__label">InTime</label>
+                    <label for="singleCheck007" class="multiselect__label">InTime</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 asd ius">
-                    <input id="singleCheck105" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 asd ius">
+                    <input id="singleCheck008" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="tkmpChild" />
                     <span></span>
-                    <label for="singleCheck105" class="multiselect__label">Транскраниальная микрополяризация
+                    <label for="singleCheck008" class="multiselect__label">Транскраниальная микрополяризация
                     </label>
                   </li>
                   <li
                     class="multiselect__item 0-3 4-9 7-10 11-13 14-17 adhd asd dyspraxia gus preparing disadaptation1">
-                    <input id="singleCheck106" class="multiselect__input" type="checkbox" name="singleCheck"
+                    <input id="singleCheck009" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="bilgouChild" />
                     <span></span>
-                    <label for="singleCheck106" class="multiselect__label 4-9 7-10 11-13 14-17">Мозжечковая
+                    <label for="singleCheck009" class="multiselect__label 4-9 7-10 11-13 14-17">Мозжечковая
                       стимуляция</label>
                   </li>
-                  <li class="multiselect__item 4-9 7-10 11-13 14-17 adhd dyspraxia emotional-disorders headache">
-                    <input id="singleCheck107" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li
+                    class="multiselect__item allChild 4-9 7-10 11-13 14-17 adhd dyspraxia emotional-disorders headache">
+                    <input id="singleCheck010" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="stabiloChild" />
                     <span></span>
-                    <label for="singleCheck107" class="multiselect__label">Стабилотренажер</label>
+                    <label for="singleCheck010" class="multiselect__label">Стабилотренажер</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 dysarthria">
-                    <input id="singleCheck108" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 dysarthria">
+                    <input id="singleCheck011" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="voka" />
                     <span></span>
-                    <label for="singleCheck108" class="multiselect__label">Вокастим</label>
+                    <label for="singleCheck011" class="multiselect__label">Вокастим</label>
                   </li>
                   <li
                     class="multiselect__item 0-3 4-9 7-10 11-13 14-17 adhd gus preparing disadaptation3 emotional-disorders">
-                    <input id="singleCheck109" class="multiselect__input" type="checkbox" name="singleCheck"
+                    <input id="singleCheck012" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="neyroportChild" />
                     <span></span>
-                    <label for="singleCheck109" class="multiselect__label">Нейропорт</label>
+                    <label for="singleCheck012" class="multiselect__label">Нейропорт</label>
                   </li>
-                  <li class="multiselect__item 4-9 7-10 11-13 14-17 adhd preparing disadaptation1">
-                    <input id="singleCheck110" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 7-10 11-13 14-17 adhd preparing disadaptation1">
+                    <input id="singleCheck013" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="kolibriChild" />
                     <span></span>
-                    <label for="singleCheck110" class="multiselect__label">Колибри</label>
+                    <label for="singleCheck013" class="multiselect__label">Колибри</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 adhd dyspraxia preparing disadaptation2">
-                    <input id="singleCheck111" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li
+                    class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 adhd dyspraxia preparing disadaptation2">
+                    <input id="singleCheck014" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="fitlightChild" />
                     <span></span>
-                    <label for="singleCheck111" class="multiselect__label">Фитлайт</label>
+                    <label for="singleCheck014" class="multiselect__label">Фитлайт</label>
                   </li>
-                  <li class="multiselect__item 4-9 7-10 11-13 14-17 asd">
-                    <input id="singleCheck112" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 7-10 11-13 14-17 asd">
+                    <input id="singleCheck015" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="kinektChild" />
                     <span></span>
-                    <label for="singleCheck112" class="multiselect__label">Когнитивно-двигательное занятие
+                    <label for="singleCheck015" class="multiselect__label">Когнитивно-двигательное занятие
                       "Кинект"</label>
                   </li>
                   <li
                     class="multiselect__item 4-9 7-10 11-13 14-17 dysarthria stutter gus disadaptation1 disadaptation2 disadaptation3">
-                    <input id="singleCheck113" class="multiselect__input" type="checkbox" name="singleCheck"
+                    <input id="singleCheck016" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="ritmoBosChild" />
                     <span></span>
-                    <label for="singleCheck113" class="multiselect__label">РитмоБос</label>
+                    <label for="singleCheck016" class="multiselect__label">РитмоБос</label>
                   </li>
-                  <li class="multiselect__item 4-9 7-10 asd preparing disadaptation2">
-                    <input id="singleCheck125" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 7-10 asd preparing disadaptation2">
+                    <input id="singleCheck017" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="numikon" />
                     <span></span>
-                    <label for="singleCheck125" class="multiselect__label">Нумикон</label>
+                    <label for="singleCheck017" class="multiselect__label">Нумикон</label>
                   </li>
                   <li
                     class="multiselect__item 4-9 7-10 11-13 14-17 adhd dysarthria stutter gus emotional-disorders headache neurosis">
-                    <input id="singleCheck114" class="multiselect__input" type="checkbox" name="singleCheck"
+                    <input id="singleCheck018" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="boslabChild" />
                     <span></span>
-                    <label for="singleCheck114" class="multiselect__label">БОСЛАБ-Профи</label>
+                    <label for="singleCheck018" class="multiselect__label">БОСЛАБ-Профи</label>
                   </li>
-                  <li class="multiselect__item 4-9 7-10 11-13 14-17 asd preparing disadaptation1 disadaptation3">
-                    <input id="singleCheck115" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li
+                    class="multiselect__item allChild 4-9 7-10 11-13 14-17 asd preparing disadaptation1 disadaptation3">
+                    <input id="singleCheck019" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="timokkoChild" />
                     <span></span>
-                    <label for="singleCheck115" class="multiselect__label">Тимокко</label>
+                    <label for="singleCheck019" class="multiselect__label">Тимокко</label>
                   </li>
                   <li
                     class="multiselect__item 0-3 4-9 7-10 11-13 14-17 adhd preparing disadaptation1 emotional-disorders">
-                    <input id="singleCheck116" class="multiselect__input" type="checkbox" name="singleCheck"
+                    <input id="singleCheck020" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="tlpChild" />
                     <span></span>
-                    <label for="singleCheck116" class="multiselect__label">The Listening Program (TLP)</label>
+                    <label for="singleCheck020" class="multiselect__label">The Listening Program (TLP)</label>
                   </li>
                   <li
                     class="multiselect__item 4-9 7-10 11-13 adhd dysarthria dyspraxia gus disadaptation1 emotional-disorders">
-                    <input id="singleCheck117" class="multiselect__input" type="checkbox" name="singleCheck"
+                    <input id="singleCheck021" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="neurogym" />
                     <span></span>
-                    <label for="singleCheck117" class="multiselect__label">Нейрогимнастика по Бернштейну</label>
+                    <label for="singleCheck021" class="multiselect__label">Нейрогимнастика по Бернштейну</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 asd stutter neurosis">
-                    <input id="singleCheck118" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 asd stutter neurosis">
+                    <input id="singleCheck022" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="music-therapyChild" />
                     <span></span>
-                    <label for="singleCheck118" class="multiselect__label">Музыкотерапия</label>
+                    <label for="singleCheck022" class="multiselect__label">Музыкотерапия</label>
                   </li>
-                  <li class="multiselect__item 4-9 7-10 11-13 14-17 adhd asd dyspraxia disadaptation3 neurosis">
-                    <input id="singleCheck119" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li
+                    class="multiselect__item allChild 4-9 7-10 11-13 14-17 adhd asd dyspraxia disadaptation3 neurosis">
+                    <input id="singleCheck023" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="art-therapy" />
                     <span></span>
-                    <label for="singleCheck119" class="multiselect__label">Арт-терапия</label>
+                    <label for="singleCheck023" class="multiselect__label">Арт-терапия</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 stutter">
-                    <input id="singleCheck120" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 stutter">
+                    <input id="singleCheck024" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="vocal-therapyChild" />
                     <span></span>
-                    <label for="singleCheck120" class="multiselect__label">Вокалотерапия</label>
+                    <label for="singleCheck024" class="multiselect__label">Вокалотерапия</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 adhd asd disadaptation1 disadaptation3">
-                    <input id="singleCheck121" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li
+                    class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 adhd asd disadaptation1 disadaptation3">
+                    <input id="singleCheck025" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="blombergChild" />
                     <span></span>
-                    <label for="singleCheck121" class="multiselect__label">Бломберг-терапия</label>
+                    <label for="singleCheck025" class="multiselect__label">Бломберг-терапия</label>
                   </li>
-                  <li class="multiselect__item 0-3 asd">
-                    <input id="singleCheck123" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 asd">
+                    <input id="singleCheck026" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="help" />
                     <span></span>
-                    <label for="singleCheck123" class="multiselect__label">Ранняя помощь</label>
+                    <label for="singleCheck026" class="multiselect__label">Ранняя помощь</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 asd">
-                    <input id="singleCheck124" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 asd">
+                    <input id="singleCheck027" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="denver" />
                     <span></span>
-                    <label for="singleCheck124" class="multiselect__label">Денверская модель раннего
+                    <label for="singleCheck027" class="multiselect__label">Денверская модель раннего
                       вмешательства</label>
                   </li>
 
-                  <li class="multiselect__item 0-3 4-9 tests asd">
-                    <input id="singleCheck147" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 tests asd">
+                    <input id="singleCheck028" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic12" />
                     <span></span>
-                    <label for="singleCheck147" class="multiselect__label">Тестирование по Денверской модели раннего
+                    <label for="singleCheck028" class="multiselect__label">Тестирование по Денверской модели раннего
                       вмешательства</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 asd">
-                    <input id="singleCheck153" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 asd">
+                    <input id="singleCheck029" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="aba" />
                     <span></span>
-                    <label for="singleCheck153" class="multiselect__label">АВА-терапия</label>
+                    <label for="singleCheck029" class="multiselect__label">АВА-терапия</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 asd">
-                    <input id="singleCheck148" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 asd">
+                    <input id="singleCheck030" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic13" />
                     <span></span>
-                    <label for="singleCheck148" class="multiselect__label">Тестирование по VB-MAPP</label>
+                    <label for="singleCheck030" class="multiselect__label">Тестирование по VB-MAPP</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 dysarthria">
-                    <input id="singleCheck126" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 dysarthria">
+                    <input id="singleCheck031" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="logoped" />
                     <span></span>
-                    <label for="singleCheck126" class="multiselect__label">Логопедический массаж</label>
+                    <label for="singleCheck031" class="multiselect__label">Логопедический массаж</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 asd gus">
-                    <input id="singleCheck122" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 asd gus">
+                    <input id="singleCheck032" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="program1" />
                     <span></span>
-                    <label for="singleCheck122" class="multiselect__label">"Слышу, говорю, умею"</label>
+                    <label for="singleCheck032" class="multiselect__label">"Слышу, говорю, умею"</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 gus">
-                    <input id="singleCheck128" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 gus">
+                    <input id="singleCheck033" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="program2" />
                     <span></span>
-                    <label for="singleCheck128" class="multiselect__label">"Нейронотки"</label>
+                    <label for="singleCheck033" class="multiselect__label">"Нейронотки"</label>
                   </li>
-                  <li class="multiselect__item 4-9 7-10 adhd disadaptation1">
-                    <input id="singleCheck129" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 7-10 adhd disadaptation1">
+                    <input id="singleCheck034" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="program3" />
                     <span></span>
-                    <label for="singleCheck129" class="multiselect__label">"Я-первоклассник"</label>
+                    <label for="singleCheck034" class="multiselect__label">"Я-первоклассник"</label>
                   </li>
-                  <li class="multiselect__item 4-9 7-10 preparing">
-                    <input id="singleCheck130" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 7-10 preparing">
+                    <input id="singleCheck035" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="program4" />
                     <span></span>
-                    <label for="singleCheck130" class="multiselect__label">"Скоро в школу"</label>
+                    <label for="singleCheck035" class="multiselect__label">"Скоро в школу"</label>
                   </li>
-                  <li class="multiselect__item 4-9 7-10 disadaptation3">
-                    <input id="singleCheck131" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 7-10 disadaptation3">
+                    <input id="singleCheck036" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="program5" />
                     <span></span>
-                    <label for="singleCheck131" class="multiselect__label">"Успешный ученик"</label>
+                    <label for="singleCheck036" class="multiselect__label">"Успешный ученик"</label>
                   </li>
-                  <li class="multiselect__item 4-9 7-10 11-13 14-17 emotional-disorders">
-                    <input id="singleCheck133" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 7-10 11-13 14-17 emotional-disorders">
+                    <input id="singleCheck037" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="program7" />
                     <span></span>
-                    <label for="singleCheck133" class="multiselect__label">"Pro-общение"</label>
+                    <label for="singleCheck037" class="multiselect__label">"Pro-общение"</label>
                   </li>
-                  <li class="multiselect__item 4-9 preparing">
-                    <input id="singleCheck157" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 preparing">
+                    <input id="singleCheck038" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="program8" />
                     <span></span>
-                    <label for="singleCheck157" class="multiselect__label">"Нейроступеньки"</label>
+                    <label for="singleCheck038" class="multiselect__label">"Нейроступеньки"</label>
                   </li>
-                  <li class="multiselect__item 4-9 preparing">
-                    <input id="singleCheck158" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 preparing">
+                    <input id="singleCheck039" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="program9" />
                     <span></span>
-                    <label for="singleCheck158" class="multiselect__label">"Нейрофитнес"</label>
+                    <label for="singleCheck039" class="multiselect__label">"Нейрофитнес"</label>
                   </li>
 
-                  <li class="multiselect__item 4-9 7-10 11-13 disadaptation3">
-                    <input id="singleCheck159" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 7-10 11-13 disadaptation3">
+                    <input id="singleCheck040" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="program10" />
                     <span></span>
-                    <label for="singleCheck159" class="multiselect__label">"Пишу красиво"</label>
+                    <label for="singleCheck040" class="multiselect__label">"Пишу красиво"</label>
                   </li>
 
-                  <li class="multiselect__item 4-9 7-10 preparing">
-                    <input id="singleCheck160" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 7-10 preparing">
+                    <input id="singleCheck041" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="program11" />
                     <span></span>
-                    <label for="singleCheck160" class="multiselect__label">"Суперчтение"</label>
+                    <label for="singleCheck041" class="multiselect__label">"Суперчтение"</label>
                   </li>
 
-                  <li class="multiselect__item 4-9 7-10 emotional-disorders">
-                    <input id="singleCheck161" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 7-10 emotional-disorders">
+                    <input id="singleCheck042" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="program12" />
                     <span></span>
-                    <label for="singleCheck161" class="multiselect__label">"Эмоциональный интеллект"</label>
+                    <label for="singleCheck042" class="multiselect__label">"Эмоциональный интеллект"</label>
                   </li>
-                  <li class="multiselect__item 14-17 emotional-disorders">
-                    <input id="singleCheck134" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 14-17 emotional-disorders">
+                    <input id="singleCheck043" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="trening" />
                     <span></span>
-                    <label for="singleCheck134" class="multiselect__label">Коммуникативный тренинг для
+                    <label for="singleCheck043" class="multiselect__label">Коммуникативный тренинг для
                       подростков</label>
                   </li>
-                  <li class="multiselect__item 11-13 14-17 neurosis tests">
-                    <input id="singleCheck135" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 11-13 14-17 neurosis tests">
+                    <input id="singleCheck044" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic1" />
                     <span></span>
-                    <label for="singleCheck135" class="multiselect__label">
+                    <label for="singleCheck044" class="multiselect__label">
                       Диагностика вероятного зависимого поведения</label>
                   </li>
-                  <li class="multiselect__item 11-13 14-17 emotional-disorders neurosis tests">
-                    <input id="singleCheck136" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 11-13 14-17 emotional-disorders neurosis tests">
+                    <input id="singleCheck045" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic2" />
                     <span></span>
-                    <label for="singleCheck136" class="multiselect__label">Диагностика личностных отклонений подростков
+                    <label for="singleCheck045" class="multiselect__label">Диагностика личностных отклонений подростков
                       и
                       взрослых</label>
                   </li>
-                  <li class="multiselect__item 4-9 7-10 preparing disadaptation1 tests">
-                    <input id="singleCheck137" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 7-10 preparing disadaptation1 tests">
+                    <input id="singleCheck046" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic3" />
                     <span></span>
-                    <label for="singleCheck137" class="multiselect__label">Диагностика готовности к школьному обучению и
+                    <label for="singleCheck046" class="multiselect__label">Диагностика готовности к школьному обучению и
                       адаптация
                       первоклассников</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 tests">
-                    <input id="singleCheck138" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 tests">
+                    <input id="singleCheck047" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="autism" />
                     <span></span>
-                    <label for="singleCheck138" class="multiselect__label">ADOS-2</label>
+                    <label for="singleCheck047" class="multiselect__label">ADOS-2</label>
                   </li>
 
-                  <li class="multiselect__item 11-13 14-17 tests emotional-disorders">
-                    <input id="singleCheck141" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 11-13 14-17 tests emotional-disorders">
+                    <input id="singleCheck048" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic6" />
                     <span></span>
-                    <label for="singleCheck141" class="multiselect__label">Школьный тест умственного развития</label>
+                    <label for="singleCheck048" class="multiselect__label">Школьный тест умственного развития</label>
                   </li>
-                  <li class="multiselect__item 0-3 tests">
-                    <input id="singleCheck142" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 tests">
+                    <input id="singleCheck049" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic7" />
                     <span></span>
-                    <label for="singleCheck142" class="multiselect__label">MacArthur CDI</label>
+                    <label for="singleCheck049" class="multiselect__label">MacArthur CDI</label>
                   </li>
-                  <li class="multiselect__item 0-3 tests">
-                    <input id="singleCheck143" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 tests">
+                    <input id="singleCheck050" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic8" />
                     <span></span>
-                    <label for="singleCheck143" class="multiselect__label">Bayley-III</label>
+                    <label for="singleCheck050" class="multiselect__label">Bayley-III</label>
                   </li>
-                  <li class="multiselect__item 0-3 tests">
-                    <input id="singleCheck144" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 tests">
+                    <input id="singleCheck051" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic9" />
                     <span></span>
-                    <label for="singleCheck144" class="multiselect__label">M-CHAT-R/F</label>
+                    <label for="singleCheck051" class="multiselect__label">M-CHAT-R/F</label>
                   </li>
-                  <li class="multiselect__item 0-3 tests">
-                    <input id="singleCheck145" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 tests">
+                    <input id="singleCheck052" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic10" />
                     <span></span>
-                    <label for="singleCheck145" class="multiselect__label">SCQ</label>
+                    <label for="singleCheck052" class="multiselect__label">SCQ</label>
                   </li>
 
-                  <li class="multiselect__item 4-9 7-10 11-13 14-17 tests">
-                    <input id="singleCheck149" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 7-10 11-13 14-17 tests">
+                    <input id="singleCheck053" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic15" />
                     <span></span>
-                    <label for="singleCheck149" class="multiselect__label">Тест Векслера</label>
+                    <label for="singleCheck053" class="multiselect__label">Тест Векслера</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 tests">
-                    <input id="singleCheck150" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 tests">
+                    <input id="singleCheck054" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic16" />
                     <span></span>
-                    <label for="singleCheck150" class="multiselect__label">Leither-III</label>
+                    <label for="singleCheck054" class="multiselect__label">Leither-III</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 tests">
-                    <input id="singleCheck151" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 tests">
+                    <input id="singleCheck055" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic17" />
                     <span></span>
-                    <label for="singleCheck151" class="multiselect__label">PFA-SBT</label>
+                    <label for="singleCheck055" class="multiselect__label">PFA-SBT</label>
                   </li>
-                  <li class="multiselect__item 11-13 14-17 tests">
-                    <input id="singleCheck152" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 11-13 14-17 tests">
+                    <input id="singleCheck056" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="diagnostic14" />
                     <span></span>
-                    <label for="singleCheck152" class="multiselect__label">Диагностическая батарея тестов по
+                    <label for="singleCheck056" class="multiselect__label">Диагностическая батарея тестов по
                       формированию
                       профориентации школьников</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 aggressive">
-                    <input id="singleCheck156" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 aggressive">
+                    <input id="singleCheck057" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="sbt" />
                     <span></span>
-                    <label for="singleCheck156" class="multiselect__label">SBT-тренинг</label>
+                    <label for="singleCheck057" class="multiselect__label">SBT-тренинг</label>
                   </li>
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 odaChild">
-                    <input id="singleCheck154" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 odaChild">
+                    <input id="singleCheck058" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="tapeChild" />
                     <span></span>
-                    <label for="singleCheck154" class="multiselect__label">Кинезиологическое тейпирование</label>
+                    <label for="singleCheck058" class="multiselect__label">Кинезиологическое тейпирование</label>
                   </li>
-                  <li class="multiselect__item 4-9 7-10 11-13 14-17 odaChild headache neurosis">
-                    <input id="singleCheck155" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 4-9 7-10 11-13 14-17 odaChild headache neurosis">
+                    <input id="singleCheck059" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="acupunctureChild" />
                     <span></span>
-                    <label for="singleCheck155" class="multiselect__label">Иглорефлексотерапия</label>
+                    <label for="singleCheck059" class="multiselect__label">Иглорефлексотерапия</label>
                   </li>
-
-
                   <li
-                    class="multiselect__item 4-9 7-10 11-13 adhd dyspraxia preparing disadaptation1 disadaptation2 disadaptation3 emotional-disorders">
-                    <input id="singleCheck162" class="multiselect__input" type="checkbox" name="singleCheck"
+                    class="multiselect__item allChild 4-9 7-10 11-13 adhd dyspraxia preparing disadaptation1 disadaptation2 disadaptation3 emotional-disorders">
+                    <input id="singleCheck060" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="camp" />
                     <span></span>
-                    <label for="singleCheck162" class="multiselect__label">Лагерь Нейроразвития</label>
+                    <label for="singleCheck060" class="multiselect__label">Лагерь Нейроразвития</label>
                   </li>
-
-
-                  <li class="multiselect__item 0-3 4-9 7-10 11-13 14-17 headache">
-                    <input id="singleCheck163" class="multiselect__input" type="checkbox" name="singleCheck"
+                  <li class="multiselect__item allChild 0-3 4-9 7-10 11-13 14-17 headache">
+                    <input id="singleCheck061" class="multiselect__input" type="checkbox" name="singleCheck"
                       data-filter="darsonval" />
                     <span></span>
-                    <label for="singleCheck163" class="multiselect__label">Дарсонвализация</label>
+                    <label for="singleCheck061" class="multiselect__label">Дарсонвализация</label>
                   </li>
                 </ul>
               </div>
@@ -1219,7 +1238,7 @@
           </form>
           <div class="programs__cards" id="result-2">
             <div data-path="tomatis"
-              class="programs__card filtered 0-3 4-9 7-10 11-13 14-17 asd ius disadaptation1 tomatisChild">
+              class="programs__card filtered allChild 0-3 4-9 7-10 11-13 14-17 asd ius disadaptation1 tomatisChild">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Аудио-психо-фоно стимуляция им. А. Томатиса
@@ -1228,7 +1247,7 @@
               </div>
             </div>
             <div data-path="bak"
-              class="programs__card filtered bakChild 0-3 4-9 7-10 11-13 14-17 adhd asd stutter gus disadaptation1 disadaptation3 emotional-disorders headache neurosis bak">
+              class="programs__card filtered allChild bakChild 0-3 4-9 7-10 11-13 14-17 adhd asd stutter gus disadaptation1 disadaptation3 emotional-disorders headache neurosis bak">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Биоакустическая коррекция (БАК)
@@ -1238,21 +1257,21 @@
               </div>
             </div>
             <div data-path="metronom"
-              class="programs__card filtered metronomChild 4-9 7-10 11-13 14-17 asd dysarthria stutter gus preparing disadaptation1 disadaptation2 disadaptation3 emotional-disorders">
+              class="programs__card filtered allChild metronomChild 4-9 7-10 11-13 14-17 asd dysarthria stutter gus preparing disadaptation1 disadaptation2 disadaptation3 emotional-disorders">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Интерактивный метроном</h3>
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
             <div data-path="intim"
-              class="programs__card filtered intimChild 0-3 4-9 7-10 11-13 14-17 adhd asd dysarthria dyspraxia stutter gus ius preparing disadaptation1 disadaptation2 disadaptation3 neurosis">
+              class="programs__card filtered allChild intimChild 0-3 4-9 7-10 11-13 14-17 adhd asd dysarthria dyspraxia stutter gus ius preparing disadaptation1 disadaptation2 disadaptation3 neurosis">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">InTime</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="tkmp" class="programs__card filtered tkmpChild 0-3 4-9 7-10 11-13 14-17 asd ius">
+            <div data-path="tkmp" class="programs__card filtered allChild tkmpChild 0-3 4-9 7-10 11-13 14-17 asd ius">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Транскраниальная микрополяризация
@@ -1262,7 +1281,7 @@
               </div>
             </div>
             <div data-path="bilgou"
-              class="programs__card filtered bilgouChild 0-3 4-9 7-10 11-13 14-17 adhd asd dyspraxia gus preparing disadaptation1">
+              class="programs__card filtered allChild bilgouChild 0-3 4-9 7-10 11-13 14-17 adhd asd dyspraxia gus preparing disadaptation1">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Мозжечковая стимуляция</h3>
 
@@ -1270,14 +1289,14 @@
               </div>
             </div>
             <div data-path="stabilo"
-              class="programs__card filtered stabiloChild 4-9 7-10 11-13 14-17 adhd dyspraxia emotional-disorders headache">
+              class="programs__card filtered allChild stabiloChild 4-9 7-10 11-13 14-17 adhd dyspraxia emotional-disorders headache">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Стабилотренажер</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="voka" class="programs__card filtered voka 0-3 4-9 7-10 11-13 14-17 dysarthria">
+            <div data-path="voka" class="programs__card filtered allChild voka 0-3 4-9 7-10 11-13 14-17 dysarthria">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Вокастим</h3>
 
@@ -1285,7 +1304,7 @@
               </div>
             </div>
             <div data-path="neyroport"
-              class="programs__card filtered neyroportChild 0-3 4-9 7-10 11-13 14-17 adhd gus preparing disadaptation3 emotional-disorders">
+              class="programs__card filtered allChild neyroportChild 0-3 4-9 7-10 11-13 14-17 adhd gus preparing disadaptation3 emotional-disorders">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Нейропорт</h3>
 
@@ -1293,7 +1312,7 @@
               </div>
             </div>
             <div data-path="kolibri"
-              class="programs__card filtered kolibriChild 4-9 7-10 11-13 14-17 adhd preparing disadaptation1">
+              class="programs__card filtered allChild kolibriChild 4-9 7-10 11-13 14-17 adhd preparing disadaptation1">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Колибри</h3>
 
@@ -1301,14 +1320,14 @@
               </div>
             </div>
             <div data-path="fit"
-              class="programs__card filtered fitlightChild 0-3 4-9 7-10 11-13 14-17 adhd dyspraxia preparing disadaptation2">
+              class="programs__card filtered allChild fitlightChild 0-3 4-9 7-10 11-13 14-17 adhd dyspraxia preparing disadaptation2">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Фитлайт</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="iir" class="programs__card filtered kinektChild 4-9 7-10 11-13 14-17 asd">
+            <div data-path="iir" class="programs__card filtered allChild kinektChild 4-9 7-10 11-13 14-17 asd">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Когнитивно-двигательное занятие "Кинект"
@@ -1318,7 +1337,7 @@
               </div>
             </div>
             <div data-path="ritmobos"
-              class="programs__card filtered ritmoBosChild 4-9 7-10 11-13 14-17 dysarthria stutter gus disadaptation1 disadaptation2 disadaptation3">
+              class="programs__card filtered allChild ritmoBosChild 4-9 7-10 11-13 14-17 dysarthria stutter gus disadaptation1 disadaptation2 disadaptation3">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">РитмоБос</h3>
 
@@ -1326,7 +1345,7 @@
               </div>
             </div>
             <div data-path="boslab"
-              class="programs__card filtered boslabChild 4-9 7-10 11-13 14-17 adhd dysarthria stutter gus emotional-disorders headache neurosis">
+              class="programs__card filtered allChild boslabChild 4-9 7-10 11-13 14-17 adhd dysarthria stutter gus emotional-disorders headache neurosis">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">БОСЛАБ-Профи</h3>
 
@@ -1334,7 +1353,7 @@
               </div>
             </div>
             <div data-path="timokko"
-              class="programs__card filtered timokkoChild 4-9 7-10 11-13 14-17 asd preparing disadaptation1 disadaptation3">
+              class="programs__card filtered allChild timokkoChild 4-9 7-10 11-13 14-17 asd preparing disadaptation1 disadaptation3">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Тимокко</h3>
 
@@ -1342,7 +1361,8 @@
               </div>
             </div>
 
-            <div data-path="numikon" class="programs__card filtered numikon 4-9 7-10 asd preparing disadaptation2">
+            <div data-path="numikon"
+              class="programs__card filtered allChild numikon 4-9 7-10 asd preparing disadaptation2">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Нумикон</h3>
 
@@ -1350,7 +1370,7 @@
               </div>
             </div>
             <div data-path="tlp"
-              class="programs__card filtered tlpChild 0-3 4-9 7-10 11-13 14-17 adhd preparing disadaptation1 emotional-disorders">
+              class="programs__card filtered allChild tlpChild 0-3 4-9 7-10 11-13 14-17 adhd preparing disadaptation1 emotional-disorders">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">The Listening Program (TLP)</h3>
 
@@ -1358,7 +1378,7 @@
               </div>
             </div>
             <div data-path="sensory"
-              class="programs__card filtered sensory 0-3 4-9 7-10 11-13 14-17 asd dyspraxia ius emotional-disorders">
+              class="programs__card filtered allChild sensory 0-3 4-9 7-10 11-13 14-17 asd dyspraxia ius emotional-disorders">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Сенсорная интеграция</h3>
 
@@ -1366,7 +1386,7 @@
               </div>
             </div>
             <div data-path="tsfi"
-              class="programs__card filtered tsfi diagnostic11 0-3 ius dyspraxia asd emotional-disorders tests">
+              class="programs__card filtered allChild tsfi diagnostic11 0-3 ius dyspraxia asd emotional-disorders tests">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Диагностика нарушений в области сенсорных систем TSFI
@@ -1376,7 +1396,7 @@
               </div>
             </div>
             <div data-path="degange"
-              class="programs__card filtered degange diagnostic4 4-9 7-10 11-13 14-17 dyspraxia ius emotional-disorders tests asd">
+              class="programs__card filtered allChild degange diagnostic4 4-9 7-10 11-13 14-17 dyspraxia ius emotional-disorders tests asd">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Диагностика нарушений в области сенсорных систем
@@ -1387,7 +1407,7 @@
               </div>
             </div>
             <div data-path="neurogym"
-              class="programs__card filtered neurogym 4-9 7-10 11-13 adhd dysarthria dyspraxia gus disadaptation1 emotional-disorders">
+              class="programs__card filtered allChild neurogym 4-9 7-10 11-13 adhd dysarthria dyspraxia gus disadaptation1 emotional-disorders">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Нейрогимнастика по Бернштейну</h3>
 
@@ -1395,7 +1415,7 @@
               </div>
             </div>
             <div data-path="music-therapy"
-              class="programs__card filtered music-therapyChild 0-3 4-9 7-10 11-13 14-17 asd stutter neurosis">
+              class="programs__card filtered allChild music-therapyChild 0-3 4-9 7-10 11-13 14-17 asd stutter neurosis">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Музыкотерапия</h3>
 
@@ -1403,7 +1423,7 @@
               </div>
             </div>
             <div data-path="vocal-therapy"
-              class="programs__card filtered vocal-therapyChild 0-3 4-9 7-10 11-13 14-17 stutter">
+              class="programs__card filtered allChild vocal-therapyChild 0-3 4-9 7-10 11-13 14-17 stutter">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Вокалотерапия</h3>
 
@@ -1411,27 +1431,27 @@
               </div>
             </div>
             <div data-path="art-therapy"
-              class="programs__card filtered art-therapy 4-9 7-10 11-13 14-17 adhd asd dyspraxia disadaptation3 neurosis">
+              class="programs__card filtered allChild art-therapy 4-9 7-10 11-13 14-17 adhd asd dyspraxia disadaptation3 neurosis">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Арт-терапия</h3>
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
             <div data-path="blomberg"
-              class="programs__card filtered blombergChild 0-3 4-9 7-10 11-13 14-17 adhd asd disadaptation1 disadaptation3">
+              class="programs__card filtered allChild blombergChild 0-3 4-9 7-10 11-13 14-17 adhd asd disadaptation1 disadaptation3">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Бломберг-терапия</h3>
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="help" class="programs__card filtered help 0-3 asd">
+            <div data-path="help" class="programs__card filtered allChild help 0-3 asd">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Ранняя помощь</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="denver" class="programs__card filtered denver 0-3 4-9 asd">
+            <div data-path="denver" class="programs__card filtered allChild denver 0-3 4-9 asd">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Денверская модель раннего вмешательства
@@ -1440,7 +1460,8 @@
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="test-denver" class="programs__card filtered diagnostic12 0-3 4-9 asd tests test-denver">
+            <div data-path="test-denver"
+              class="programs__card filtered allChild diagnostic12 0-3 4-9 asd tests test-denver">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Тестирование по Денверской модели раннего вмешательства
@@ -1449,7 +1470,7 @@
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="aba" class="programs__card filtered aba 0-3 4-9 7-10 11-13 14-17 asd">
+            <div data-path="aba" class="programs__card filtered allChild aba 0-3 4-9 7-10 11-13 14-17 asd">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">АВА-терапия</h3>
 
@@ -1457,21 +1478,22 @@
               </div>
             </div>
             <div data-path="aba-test"
-              class="programs__card filtered diagnostic13 asd tests 0-3 4-9 7-10 11-13 aba-test">
+              class="programs__card filtered allChild diagnostic13 asd tests 0-3 4-9 7-10 11-13 aba-test">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Тестирование по VB-MAPP</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="logoped" class="programs__card filtered logoped 0-3 4-9 7-13 11-13 14-17 dysarthria">
+            <div data-path="logoped"
+              class="programs__card filtered allChild logoped 0-3 4-9 7-13 11-13 14-17 dysarthria">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Логопедический массаж</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="program1" class="programs__card filtered program1 0-3 4-9 asd gus">
+            <div data-path="program1" class="programs__card filtered allChild program1 0-3 4-9 asd gus">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Программа "Слышу, говорю, умею"
@@ -1480,70 +1502,71 @@
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="program2" class="programs__card filtered program2 0-3 4-9 7-10 gus">
+            <div data-path="program2" class="programs__card filtered allChild program2 0-3 4-9 7-10 gus">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Программа "Нейронотки"</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="program3" class="programs__card filtered program3 4-9 7-10 adhd disadaptation1">
+            <div data-path="program3" class="programs__card filtered allChild program3 4-9 7-10 adhd disadaptation1">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Программа "Я-первоклассник"</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="program4" class="programs__card filtered program4 4-9 7-10 preparing">
+            <div data-path="program4" class="programs__card filtered allChild program4 4-9 7-10 preparing">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Программа "Скоро в школу"</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="program5" class="programs__card filtered program5 4-9 7-10 disadaptation3">
+            <div data-path="program5" class="programs__card filtered allChild program5 4-9 7-10 disadaptation3">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Программа "Успешный ученик"</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="program7" class="programs__card filtered program7 4-9 7-10 11-13 14-17 emotional-disorders">
+            <div data-path="program7"
+              class="programs__card filtered allChild program7 4-9 7-10 11-13 14-17 emotional-disorders">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Программа "PRO-общение"</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="program8" class="programs__card filtered 4-9 preparing program8">
+            <div data-path="program8" class="programs__card filtered allChild 4-9 preparing program8">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Программа "Нейроступеньки"</h3>
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
 
-            <div data-path="program9" class="programs__card filtered 4-9 7-10 preparing program9">
+            <div data-path="program9" class="programs__card filtered allChild 4-9 7-10 preparing program9">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Программа "Нейрофитнес"</h3>
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
 
-            <div data-path="program10" class="programs__card filtered 4-9 7-10 11-13 disadaptation3 program10">
+            <div data-path="program10" class="programs__card filtered allChild 4-9 7-10 11-13 disadaptation3 program10">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Программа "Пишу красиво"</h3>
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
 
-            <div data-path="program11" class="programs__card filtered 4-9 7-10 preparing program11">
+            <div data-path="program11" class="programs__card filtered allChild 4-9 7-10 preparing program11">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Программа "Суперчтение"</h3>
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
 
-            <div data-path="program12" class="programs__card filtered 4-9 7-10 emotional-disorders program12">
+            <div data-path="program12" class="programs__card filtered allChild 4-9 7-10 emotional-disorders program12">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Программа "Эмоциональный интеллект"
@@ -1551,7 +1574,7 @@
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="trening" class="programs__card filtered trening 14-17 emotional-disorders">
+            <div data-path="trening" class="programs__card filtered allChild trening 14-17 emotional-disorders">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Коммуникативный тренинг для подростков
@@ -1561,14 +1584,14 @@
               </div>
             </div>
 
-            <div data-path="sbt" class="programs__card filtered 0-3 4-9 7-10 11-13 14-17 aggressive sbt">
+            <div data-path="sbt" class="programs__card filtered allChild 0-3 4-9 7-10 11-13 14-17 aggressive sbt">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">SBT-тренинг</h3>
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
             <div data-path="dependence"
-              class="programs__card filtered diagnostic1 11-13 14-17 tests neurosis dependence">
+              class="programs__card filtered allChild diagnostic1 11-13 14-17 tests neurosis dependence">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Диагностика вероятного зависимого поведения
@@ -1578,7 +1601,7 @@
               </div>
             </div>
             <div data-path="personality-disorders"
-              class="programs__card filtered diagnostic2 11-13 14-17 tests emotional-disorders neurosis personality-disorders">
+              class="programs__card filtered allChild diagnostic2 11-13 14-17 tests emotional-disorders neurosis personality-disorders">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Диагностика личностных отклонений подростков и взрослых
@@ -1588,7 +1611,7 @@
               </div>
             </div>
             <div data-path="ready-test"
-              class="programs__card filtered diagnostic3 4-9 7-10 tests preparing disadaptation1 ready-test">
+              class="programs__card filtered allChild diagnostic3 4-9 7-10 tests preparing disadaptation1 ready-test">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Диагностика готовности к школьному обучению и адаптация
@@ -1598,7 +1621,7 @@
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="ados" class="programs__card filtered autism 0-3 4-9 7-10 11-13 14-17 tests ados">
+            <div data-path="ados" class="programs__card filtered allChild autism 0-3 4-9 7-10 11-13 14-17 tests ados">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">ADOS-2</h3>
 
@@ -1606,7 +1629,7 @@
               </div>
             </div>
             <div data-path="school-test"
-              class="programs__card filtered diagnostic6 11-13 14-17 tests emotional-disorders school-test">
+              class="programs__card filtered allChild diagnostic6 11-13 14-17 tests emotional-disorders school-test">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Школьный тест умственного развития
@@ -1615,28 +1638,28 @@
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="macartur" class="programs__card filtered diagnostic7 0-3 tests macartur">
+            <div data-path="macartur" class="programs__card filtered allChild diagnostic7 0-3 tests macartur">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">MacArthur CDI</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="bayley" class="programs__card filtered diagnostic8 0-3 tests bayley">
+            <div data-path="bayley" class="programs__card filtered allChild diagnostic8 0-3 tests bayley">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Bayley-III</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="mchat" class="programs__card filtered diagnostic9 0-3 tests mchat">
+            <div data-path="mchat" class="programs__card filtered allChild diagnostic9 0-3 tests mchat">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">M-CHAT-R/F</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="scq" class="programs__card filtered diagnostic10 0-3 tests scq">
+            <div data-path="scq" class="programs__card filtered allChild diagnostic10 0-3 tests scq">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">SCQ</h3>
 
@@ -1644,7 +1667,7 @@
               </div>
             </div>
             <div data-path="proforientation"
-              class="programs__card filtered diagnostic14 11-13 14-17 tests proforientation">
+              class="programs__card filtered allChild diagnostic14 11-13 14-17 tests proforientation">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Диагностическая батарея тестов по формированию
@@ -1654,7 +1677,8 @@
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="veksler" class="programs__card filtered diagnostic15 4-9 7-10 11-13 14-17 tests veksler">
+            <div data-path="veksler"
+              class="programs__card filtered allChild diagnostic15 4-9 7-10 11-13 14-17 tests veksler">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Тест Векслера</h3>
 
@@ -1662,14 +1686,15 @@
               </div>
             </div>
             <div data-path="leither"
-              class="programs__card filtered diagnostic16 0-3 4-9 7-10 11-13 14-17 tests leither">
+              class="programs__card filtered allChild diagnostic16 0-3 4-9 7-10 11-13 14-17 tests leither">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Leither-III</h3>
 
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
-            <div data-path="pfa" class="programs__card filtered diagnostic17 0-3 4-9 7-10 11-13 14-17 tests pfa">
+            <div data-path="pfa"
+              class="programs__card filtered allChild diagnostic17 0-3 4-9 7-10 11-13 14-17 tests pfa">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">PFA-SBT</h3>
 
@@ -1677,7 +1702,7 @@
               </div>
             </div>
             <div data-path="kinesio"
-              class="programs__card filtered 0-3 4-9 7-10 11-13 14-17 odaChild tapeChild kinesio">
+              class="programs__card filtered allChild 0-3 4-9 7-10 11-13 14-17 odaChild tapeChild kinesio">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">
                   Кинезиологическое тейпирование
@@ -1686,7 +1711,7 @@
               </div>
             </div>
             <div data-path="iglo"
-              class="programs__card filtered 4-9 7-10 11-13 14-17 odaChild neurosis headache acupunctureChild iglo">
+              class="programs__card filtered allChild 4-9 7-10 11-13 14-17 odaChild neurosis headache acupunctureChild iglo">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Иглорефлексотерапия</h3>
                 <button class="btn-reset button card__btn">Подробнее</button>
@@ -1694,14 +1719,15 @@
             </div>
 
             <div data-path="camp"
-              class="programs__card filtered 4-9 7-10 11-13 adhd dyspraxia preparing disadaptation1 disadaptation2 disadaptation3 emotional-disorders camp">
+              class="programs__card filtered allChild 4-9 7-10 11-13 adhd dyspraxia preparing disadaptation1 disadaptation2 disadaptation3 emotional-disorders camp">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Лагерь Нейроразвития</h3>
                 <button class="btn-reset button card__btn">Подробнее</button>
               </div>
             </div>
 
-            <div data-path="darsonval" class="programs__card filtered 0-3 4-9 7-10 11-13 14-17 headache darsonval">
+            <div data-path="darsonval"
+              class="programs__card filtered allChild 0-3 4-9 7-10 11-13 14-17 headache darsonval">
               <div class="programs__banner">
                 <h3 class="margin-reset programs__title">Дарсонвализация</h3>
                 <button class="btn-reset button card__btn">Подробнее</button>
@@ -2359,7 +2385,7 @@
         </div>
       </div>
     </section>
-    <section class="call">
+    <section class="section call">
       <div class="container">
         <div class="call-container">
           <div class="call__bg"></div>
@@ -2375,7 +2401,7 @@
         </div>
       </div>
     </section>
-    <section class="specialists" id="specialists">
+    <section class="section specialists" id="specialists">
       <div class="container">
         <h2 class="margin-reset title">Команда центра</h2>
         <div class="specialists__btns">
@@ -2550,7 +2576,7 @@
         </a>
       </div>
     </section>
-    <section class="science" id="science">
+    <section class="section science" id="science">
       <div class="container">
         <h2 class="margin-reset title">Наука</h2>
         <div class="science__btns">
@@ -2706,7 +2732,7 @@
         <a href="#" class="link-reset science__all-btn"> СМОТРЕТЬ ВСЕ ПУБЛИКАЦИИ </a>
       </div>
     </section>
-    <section class="consultation">
+    <section class="section consultation">
       <div class="container">
         <div class="consultation__block">
           <div class="consultation__bg"></div>
