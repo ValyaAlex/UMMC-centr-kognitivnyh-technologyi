@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let programChild = document.querySelector(".program-2");
   let resetBtn = document.querySelector(".reset");
   let resetBtn2 = document.querySelector(".reset-2");
-  const selectChild = document.querySelector("#singleSelect007");
   const items = document.querySelectorAll(".multiselect__item");
 
   let firstDownld = Array.from(document.querySelectorAll("#result .programs__card"));
@@ -32,16 +31,16 @@ document.addEventListener("DOMContentLoaded", function () {
   //selects
   const selectSingle = document.querySelectorAll(".select");
   const selectContent = document.querySelectorAll(".select__content");
-  let select0;
   let arr = [];
   let class1;
   let class2;
+  let cls;
   let titleYears = document.querySelector(".title-year")
   let titleDirection = document.querySelector(".title-child");
-  let titleCheck = document.querySelectorAll(".multiselect__title");
+  let titleMethodsOld = document.querySelectorAll(".title-methods-old");
+  let titleMethodsChild = document.querySelectorAll(".title-methods-child");
 
   selectSingle.forEach(function (e) {
-    select0 = e.querySelector(".select0");
     e.addEventListener("click", (elem) => {
       const pth = elem.currentTarget.dataset.path;
       let content = document.querySelector(`[data-target="${pth}"]`);
@@ -66,20 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
               selectContent.forEach(function () {
                 content.classList.add("select--disabled");
               });
-
-              titleCheck.forEach((elem) => {
-                elem.textContent = elem.getAttribute("data-default");
-                elem.style.color = "rgb(124, 144, 160)"
-
-                let checkboxes = document.getElementsByName("singleCheck");
-                for (let i = 0; i < checkboxes.length; i++) {
-                  if (checkboxes[i].checked) {
-                    checkboxes[i].checked = false;
-                    result = 0;
-                  }
-                }
-                arr = [];
-              })
             });
           }
           document.addEventListener("click", (el) => {
@@ -92,33 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
           })
         });
-      }
-
-      if (program.classList.contains("programs--active")) {
-        if (title.textContent.trim() !== title.getAttribute("data-default") || result > 0) {
-          resetBtn.classList.add("reset--active");
-          resetBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-            resetFunc(selectSingle, multiselect);
-            resetBtn.classList.remove("reset--active");
-
-          });
-        }
-      } else {
-        resetBtn.classList.remove("reset--active");
-      }
-
-      if (programChild.classList.contains("programs--active")) {
-        if (title.textContent.trim() !== title.getAttribute("data-default") || result > 0) {
-          resetBtn2.classList.add("reset--active");
-          resetBtn2.addEventListener("click", function (e) {
-            e.preventDefault();
-            resetFunc(selectSingle, multiselect);
-            resetBtn2.classList.remove("reset--active");
-          });
-        }
-      } else {
-        resetBtn2.classList.remove("reset--active");
       }
     });
   });
@@ -168,6 +126,12 @@ document.addEventListener("DOMContentLoaded", function () {
               } else {
                 title.textContent = "Методики" + " " + "(" + result + ")";
                 title.style.color = "var(--black)";
+                if (program.classList.contains('programs--active')) {
+                  resetBtnActive(resetBtn, resetBtn2)
+                }
+                if (programChild.classList.contains('programs--active')) {
+                  resetBtnActive(resetBtn2, resetBtn)
+                }
               }
             });
           }
@@ -181,27 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
           })
         });
-      }
-      if (program.classList.contains("programs--active")) {
-        if (select0.hasAttribute("checked") === false || result > 0) {
-          resetBtn.classList.add("reset--active");
-          resetBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-            resetFunc(multiselect, selectSingle);
-            resetBtn.classList.remove("reset--active");
-          });
-        }
-      }
-
-      if (programChild.classList.contains("programs--active")) {
-        if (selectChild.hasAttribute("checked") === false || result > 0) {
-          resetBtn2.classList.add("reset--active");
-          resetBtn2.addEventListener("click", function (e) {
-            e.preventDefault();
-            resetFunc(multiselect, selectSingle);
-            resetBtn2.classList.remove("reset--active");
-          });
-        }
       }
     });
   });
@@ -242,16 +185,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   selectsBig1.forEach(function (element) {
     element.addEventListener("click", function () {
-      cardsNewList = [];
-      class1 = element.getAttribute("data-filter");
-      filtersSelect(selectItems, class1);
-      filtersSelect(list1, class1);
+      resetMultiselect(titleMethodsOld);
+      resetBtnActive(resetBtn, resetBtn2);
+      cls = element.getAttribute("data-filter");
+      filtersSelect(selectItems, cls);
+      filtersSelect(list1, cls);
       showMore(cardsNewList, btnMore1);
     });
   });
 
   selectsChild2.forEach(function (e) {
     e.addEventListener("click", function () {
+      resetMultiselect(titleMethodsChild);
+      resetBtnActive(resetBtn2, resetBtn)
       if (titleYears.textContent === titleYears.getAttribute("data-default") || class1 === undefined) {
         class2 = e.getAttribute("data-filter");
         filtersSelect(selectsChild6, class2);
@@ -264,6 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
         filtersSelect(selectsChild6, class2)
         filtersSelectChild(selectsChild4, class1, class2);
         filtersSelectChild(list2, class1, class2);
+        console.log(class1, class2)
         showMore(cardsNewList, btnMore2);
       }
     });
@@ -271,11 +218,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   selectsChild1.forEach(function (e) {
     e.addEventListener("click", function () {
+      resetMultiselect(titleMethodsChild);
+      resetBtnActive(resetBtn2, resetBtn);
       if (titleDirection.textContent === titleDirection.getAttribute("data-default") || class2 === undefined) {
         class1 = e.getAttribute("data-filter");
         filtersSelect(selectsChild5, class1);
         filtersSelect(selectsChild4, class1);
         filtersSelect(list2, class1);
+        console.log(class1, class2)
         showMore(cardsNewList, btnMore2);
       }
       else {
@@ -318,14 +268,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (arr.length === 0) {
-        if (class1 === undefined) {
+        if (cls === undefined) {
           resetFunc(selectSingle, multiselect);
+          resetBtn.classList.remove("reset--active");
         } else {
           Array.from(list1).forEach(function (e) {
             e.classList.remove("none");
-            filtersSelect(list1, class1);
+            filtersSelect(list1, cls);
+            resetMultiselect(titleMethodsOld);
           });
-
         }
       } else {
         resetBtn.classList.remove("none");
@@ -351,29 +302,30 @@ document.addEventListener("DOMContentLoaded", function () {
         btnMore2.style.display = "none";
         if (class1 === undefined && class2 === undefined) {
           resetFunc(selectSingle, multiselect);
+          resetBtn2.classList.remove("reset--active");
         }
 
         if (class1 !== undefined && class2 === undefined) {
           Array.from(list2).forEach(function (e) {
             e.classList.remove("none");
-            resetBtn.classList.add("none");
           });
+          resetMultiselect(titleMethodsChild);
           filtersSelect(list2, class1);
           showMore(cardsNewList, btnMore2);
         }
         if (class1 === undefined && class2 !== undefined) {
           Array.from(list2).forEach(function (e) {
             e.classList.remove("none");
-            resetBtn.classList.add("none");
           });
+          resetMultiselect(titleMethodsChild);
           filtersSelect(list2, class2);
           showMore(cardsNewList, btnMore2);
         }
         if (class1 !== undefined && class2 !== undefined) {
           Array.from(list2).forEach(function (e) {
             e.classList.remove("none");
-            resetBtn.classList.add("none");
           });
+          resetMultiselect(titleMethodsChild);
           filtersSelectChild(list2, class1, class2);
           showMore(cardsNewList, btnMore2);
         }
@@ -422,6 +374,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       class2 = undefined;
       class1 = undefined;
+      cls = undefined;
 
       for (let i = 0; i < selectsChild5.length; i++) {
         selectsChild5[0].style.display = "none";
@@ -474,5 +427,37 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       btn.style.display = "none";
     }
+  }
+
+  function resetMultiselect(title) {
+    title.forEach((elem) => {
+      elem.textContent = elem.getAttribute("data-default");
+      elem.style.color = "rgb(124, 144, 160)"
+
+      let checkboxes = document.getElementsByName("singleCheck");
+      for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+          checkboxes[i].checked = false;
+          result = 0;
+        }
+      }
+    })
+  }
+
+  function resetBtnActive(btn, btn2) {
+    btn.classList.add("reset--active");
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      resetFunc(multiselect, selectSingle);
+      btn.classList.remove("reset--active");
+      if (btn2.classList.contains('reset--active')) {
+        btn2.classList.remove("reset--active");
+      } else {
+        return
+      }
+      if (btn2 === undefined || btn === undefined) {
+        return
+      }
+    });
   }
 });
